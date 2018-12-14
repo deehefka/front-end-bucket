@@ -12,9 +12,10 @@ ERD - One to Many (One User to Many Pictures)
 https://imgur.com/CZHFUhp
 
 User Stories -
-- As a user, I should be able to sign up and sign in to access my Pictures
-- As a user, I should be able to upload pictures to my bucket
-- As a user, I should be able to create, index, update and delete my pictures.
+- As a user, I should be able to sign up and sign in to access my bucket list
+- As a user, I should be able to create, index, update and delete my bucket list items
 - As a user, I should be able to change my password and sign out (only after successful sign in)
-- As a user, I should be able to add a title, subtitle, description and location/venue to my Pictures
-- As a user, I should be able to search for a location for my pictures
+- As a user, I should be able to add a title, subtitle, description and location/venue to my bucket list items
+- As a user, I should be able to search for a geo-location for my bucket list items
+
+Stretch Goal - Add images/use AWS

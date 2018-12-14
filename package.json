@@ -47,5 +47,9 @@
     "url-loader": "^1.0.1",
     "webpack": "^3.5.1",
     "webpack-dev-server": "^2.7.1"
+  },
+  "engines": {
+    "node": "v8.9.1",
+    "npm": "6.4.1"
   }
 }
