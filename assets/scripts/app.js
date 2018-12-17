@@ -8,8 +8,7 @@
 
 const authEvents = require('./event.js')
 
-const JS = require('./JS.js')
-
+// const JS = require('./JS.js')
 
 $(() => {
   // your JS code goes here
