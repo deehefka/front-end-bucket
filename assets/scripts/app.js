@@ -12,8 +12,8 @@ const authEvents = require('./event.js')
 
 $(() => {
   // your JS code goes here
-  $('#sign-up').on('click', authEvents.onSignUp)
-  $('#sign-in').on('click', authEvents.onSignIn)
+  $('#sign-up-form').on('click', authEvents.onSignUp)
+  $('#sign-in-form').on('click', authEvents.onSignIn)
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#change-password').on('click', authEvents.onChangePassword)
   $('#bucket-list-create').on('submit', authEvents.onBucketListCreate)
