@@ -1,6 +1,6 @@
 'use strict'
 
-const getFormFields = require('./lib/get-form-fields.js')
+const getFormFields = require('./../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 
@@ -45,9 +45,50 @@ const onChangePassword = event => {
     .catch(ui.changePasswordFailure) // if the request failed
 }
 
+const onBucketListCreate = event => {
+  event.preventDefault()
+  // $('#todo-item').show()
+  // $('#list').show()
+  const data = getFormFields(event.target)
+  api.bucketListCreate(data)
+    .then(ui.bucketListCreateSuccess)
+    .catch(ui.bucketListCreateFailure)
+}
+
+const onBucketListUpdate = event => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  // pulling specific data from id of to-do item
+  api.bucketListUpdate(data, data.todo_list.id)
+    .then(ui.bucketListUpdateSuccess) // if your request was succesful
+    .catch(ui.bucketListUpdateFailure) // if your request failed
+}
+
+const onBucketListIndex = event => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.bucketListIndex(data)
+    .then(ui.bucketListIndexSuccess) // if your request was succesful
+    .catch(ui.bucketListIndexFailure) // if your request failed
+}
+
+const onBucketListDelete = event => {
+  event.preventDefault()
+  // deleting data input on click
+  const data = $('#delete-task').val()
+  // const data = $('#delete-todo_list[id]').val()
+  api.bucketListDelete(data)
+    .then(ui.bucketListDeleteSuccess) // if your request was succesful
+    .catch(ui.bucketListDeleteFailure) // if your request failed
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onChangePassword
+  onChangePassword,
+  onBucketListDelete,
+  onBucketListIndex,
+  onBucketListUpdate,
+  onBucketListCreate
 }

@@ -40,9 +40,56 @@ const signOut = () => {
   })
 }
 
+const bucketListCreate = data => {
+  return $.ajax({
+    url: config.apiUrl + '/bucketLists',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+// pulled from class lectures
+const bucketListUpdate = (data, id) => {
+  return $.ajax({
+    url: config.apiUrl + '/bucketLists/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+// pulled from class lectures
+const bucketListDelete = id => {
+  return $.ajax({
+    url: config.apiUrl + '/bucketLists/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+// pulled from class lectures
+const bucketListIndex = () => {
+  return $.ajax({
+    url: config.apiUrl + '/bucketLists',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+    // data: data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  bucketListIndex,
+  bucketListDelete,
+  bucketListUpdate,
+  bucketListCreate
 }
