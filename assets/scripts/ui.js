@@ -18,7 +18,7 @@ const signUpFailure = error => {
   $('#message').text('Error on SignUp')
   $('#message').removeClass()
   $('#message').addClass('failure')
-// console.error('signUpFailure ran. Error is :', error)
+  console.error('signUpFailure ran. Error is :', error)
 }
 
 const signInSuccess = data => {
@@ -38,7 +38,7 @@ const signInFailure = error => {
   $('#message2').text('Error on SignIn')
   $('#message2').removeClass()
   $('#message2').addClass('failure')
-  // console.error('signInFailure ran. Error is :', error)
+  console.error('signInFailure ran. Error is :', error)
 }
 
 const signOutSuccess = data => {
@@ -59,7 +59,7 @@ const signOutFailure = error => {
   $('#message3').text('Error on SignOut')
   $('#message3').removeClass()
   $('#message3').addClass('failure')
-  // console.error('signOutFailure ran. Error is :', error)
+  console.error('signOutFailure ran. Error is :', error)
 }
 
 const changePasswordSuccess = data => {
@@ -77,7 +77,7 @@ const changePasswordFailure = error => {
   $('#message4').text('Error on Change Password')
   $('#message4').removeClass()
   $('#message4').addClass('failure')
-  // console.error('changePasswordFailure ran. Error is :', error)
+  console.error('changePasswordFailure ran. Error is :', error)
 }
 
 const bucketListCreateSuccess = data => {
