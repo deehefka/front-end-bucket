@@ -47,7 +47,7 @@ const bucketListCreate = data => {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: data
+    data
   })
 }
 // pulled from class lectures

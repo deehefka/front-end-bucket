@@ -59,7 +59,7 @@ const onBucketListUpdate = event => {
   event.preventDefault()
   const data = getFormFields(event.target)
   // pulling specific data from id of to-do item
-  api.bucketListUpdate(data, data.todo_list.id)
+  api.bucketListUpdate(data, data.bucketList.id)
     .then(ui.bucketListUpdateSuccess) // if your request was succesful
     .catch(ui.bucketListUpdateFailure) // if your request failed
 }
