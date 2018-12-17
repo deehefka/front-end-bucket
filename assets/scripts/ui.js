@@ -1,7 +1,6 @@
 'use strict'
 
 const store = require('./store.js')
-// const JS = require('./JS.js')
 
 // methods signUpSuccess,signUpFailure
 const signUpSuccess = data => {
