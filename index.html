@@ -1,17 +1,172 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>#SSS</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+   <head>
+     <title>#SSS</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+     <!-- Do not add `link` tags-->
+     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Sleepy Secret Squirrel Squad</h1>
-    </body>
-</html>
+     <!-- Do not add `script` tags-->
+     <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+     <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+   </head>
+   <body>
+       <style>
+         body {
+             background: url("img/bucketlist.jpg");
+             background-repeat: no-repeat;
+             background-size: 100%;
+           }
+         </style>
+       <style>
+         section {
+             @keyframes example {
+             0% {
+               left: 0px;
+             }
+
+             50% {
+               left: 200px;
+             }
+
+             100% {
+               left: 0px;
+             }
+           }
+         }
+         </style>
+       </head>
+
+       <body>
+         <header>
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal" ; span style="margin-left:80px;">Sign
+             Up</span></button>
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal" ; span style="margin-left:80px;">Sign
+             In</span></button>
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signOutModal" ; span style="margin-left:80px;">Sign
+             Out</span></button>
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal" ; span style="margin-left:80px;">Change
+             Password</span></button>
+         </header>
+         <aside>
+           <img src="img/Xmas.jpg" alt="squirrel">
+         </aside>
+<!-- Sign up Button -->
+         <div>
+           <div class="modal fade" id="signUpModal">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalLabel"></h5>
+                 </div>
+                 <div class="modal-body">
+                   <form id='sign-up-form'>
+                     <input type='text' name='credentials[email]' placeholder='Email' />
+                     <input type='password' name='credentials[password]' placeholder='Password' />
+                     <input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password' />
+                   </form>
+                   <p id='message'></p>
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                   <button type="button" class="btn btn-primary" id="sign-up">SAVE</button>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+<!-- Sign in Button -->
+         <div>
+           <div class="modal fade" id="signInModal">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalLabel"></h5>
+                 </div>
+                 <div class="modal-body">
+                   <div>
+                     <a class='borderTwo' href='#exampleTwo'></a>
+                   </div>
+                   <div class='borderTwo-content' id='exampleTwo'>
+                     <form id='sign-in-form' class='borderOne'>
+                       <div>
+                         <input type='text' name='credentials[email]' placeholder='Email' />
+                         <input type='password' name='credentials[password]' placeholder='Password' />
+                         <input type='submit' id='sign-in' value='Sign In !' />
+                       </div>
+                     </form>
+                     <p id='message2'></p>
+                   </div>
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+
+<!-- Change Password -->
+         <div>
+           <div class="modal fade" id="changePasswordModal">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalLabel"></h5>
+                 </div>
+                 <div class="modal-body">
+                   <div>
+                     <a class='borderThree' href='#exampleThree'></a>
+                   </div>
+                   <div class='borderThree-content' id='exampleThree'>
+                     <form id='change-password-form'>
+                       <input type='password' name='password[old]' placeholder='Old Password'>
+                       <input type='password' name='password[new]' placeholder='New Password'>
+                       <input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password' />
+                       <input id='change-password' type='submit' value='Change Password'>
+                     </form>
+                     <p id='message4'></p>
+                   </div>
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+<!-- Sign out Button -->
+         <div>
+           <div class="modal fade" id="signOutModal">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalLabel"></h5>
+                 </div>
+                 <div class="modal-body">
+                   <form id='sign-out' class='border'>
+                     <div>
+                       <input type='submit' value='Sign Out !' />
+                     </div>
+                   </form>
+                   <p id='message3'></p>
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+         <section>
+           <img src="img/S.png" alt="squirrel">
+         </section>
+
+         <footer>
+           <p>&copy; #Sleepy Squirrel Squad ! (all rights reserved)</p>
+         </footer>
+
+       </body>
+
+      </html>
