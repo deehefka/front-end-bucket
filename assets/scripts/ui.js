@@ -25,6 +25,11 @@ const signUpFailure = error => {
 
 const signInSuccess = data => {
   store.user = data.user
+  store.userSignedIn = true
+  $('#sign-up-btn').hide()
+  $('#sign-in-btn').hide()
+  $('#sign-out-btn').show()
+  $('#password-btn').show()
   $('#message2').text('Signed In Successfully')
   $('#message2').removeClass()
   $('#message2').addClass('success')
@@ -46,6 +51,11 @@ const signInFailure = error => {
 }
 
 const signOutSuccess = data => {
+  store.userSignedIn = false
+  $('#sign-up-btn').show()
+  $('#sign-in-btn').show()
+  $('#sign-out-btn').hide()
+  $('#password-btn').hide()
   store.user = null
   $('#message3').text('Signed Out Successfully')
   $('#message3').removeClass()
