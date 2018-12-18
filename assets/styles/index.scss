@@ -76,7 +76,6 @@ img {
   border-radius: 25px;
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -102,6 +101,10 @@ img {
   float: right;
   font-size: 28px;
   font-weight: bold;
+}
+
+legend {
+  color: white;
 }
 
 .close:hover,
