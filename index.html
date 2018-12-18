@@ -36,175 +36,173 @@
            }
          }
          </style>
-  <style>
-    aside {
-      position: fixed;
-      top: 0;
-      border-radius: 50%;
-}
+       </head>
 
-    section {
-      color: transparent;
-      position: fixed;
-      bottom: 0;
-      right: 600px;
-      border-radius: 50%;
-}
+       <body>
+         <header>
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Sign
+             Up</span></button>
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">Sign
+             In</span></button>
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signOutModal">Sign
+             Out</span></button>
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">Change
+             Password</span></button>
+         </header>
+         <aside>
+            <img src="public/images/xmas.jpg" alt="squirrel">
+         </aside>
+<!-- Sign up Button -->
+         <div>
+           <div class="modal fade" id="signUpModal">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalLabel"></h5>
+                 </div>
+                 <div class="modal-body">
+                   <form id='sign-up-form'>
+                     <fieldset>
+                       <legend>Sign up</legend>
+                       <input class="form-control" type='text' name='credentials[email]' placeholder='Email' />
+                       <input class="form-control" type='password' name='credentials[password]' placeholder='Password' />
+                       <input class="form-control" type='password' name='credentials[password_confirmation]' placeholder='Confirm Password' />
+                       <button type="submit" class="btn btn-primary" name="submit" value="Sign Up">Sign Up</button>
+                   </fieldset>
+                   </form>
+                   <p id='message'></p>
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+<!-- Sign in Button -->
+         <div>
+           <div class="modal fade" id="signInModal">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalLabel"></h5>
+                 </div>
+                 <div class="modal-body">
+                   <div>
+                     <a class='borderTwo' href='#exampleTwo'></a>
+                   </div>
+                   <div class='borderTwo-content' id='exampleTwo'>
+                     <form id='sign-in-form' class='borderOne'>
+                       <fieldset>
+                         <legend>Sign In</legend>
+                       <div>
+                         <input class="form-control" type='text' name='credentials[email]' placeholder='Email' />
+                         <input class="form-control" type='password' name='credentials[password]' placeholder='Password' />
+                         <button type="submit" class="btn btn-primary" name="submit" value="Sign In">Sign In</button>
+                       </div>
+                     </fieldset>
+                     </form>
+                     <p id='message2'></p>
+                   </div>
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
 
-    img {
-      border-radius: 50%;
-}
-    /* The Modal (background) */
-    .modal {
-      border-radius: 25px;
-      display: none; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: tran; /* Fallback color */
-      background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-}
-/* Modal Content/Box */
-    .modal-content {
-      border-radius: 5px;
-      background-color: transparent;
-      margin: 15% auto; /* 15% from the top and centered */
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%; /* Could be more or less, depending on screen size */
-}
+<!-- Change Password -->
+         <div>
+           <div class="modal fade" id="changePasswordModal">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalLabel"></h5>
+                 </div>
+                 <div class="modal-body">
+                   <div>
+                     <a class='borderThree' href='#exampleThree'></a>
+                   </div>
+                   <div class='borderThree-content' id='exampleThree'>
+                     <form id='change-password-form'>
+                       <input type='password' name='password[old]' placeholder='Old Password'>
+                       <input type='password' name='password[new]' placeholder='New Password'>
+                       <input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password' />
+                       <input id='change-password' type='submit' value='Change Password'>
+                     </form>
+                     <p id='message4'></p>
+                   </div>
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+<!-- Sign out Button -->
+         <div>
+           <div class="modal fade" id="signOutModal">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalLabel"></h5>
+                 </div>
+                 <div class="modal-body">
+                   <form id='sign-out' class='border'>
+                     <div>
+                       <input type='submit' value='Sign Out !' />
+                     </div>
+                   </form>
+                   <p id='message3'></p>
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+         <section>
+           <img src="public/images/S.png" alt="squirrel">
+         </section>
 
-/* The Close Button */
-    .close {
-      color: transparent;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-}
+         <div class="container">
+        <form id="bucket-list-index">
+          <fieldset>
+              <input type="submit" class="btn btn-primary" value="Show My Bucket List" id="showButton">
+          </fieldset>
+        </form>
 
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-}
+        <h2 id="my-bucket-items" class="text-center"></h2>
+            <form id="bucket-list-create" class="col-8 mx-auto">
+            <div id="output"></div>
+            <fieldset>
+              <input type="text" name="bucket-list[title]" placeholder="Where do you want to go?" class="col - 8 mx-auto" id="title">
+              <input type="text" name="bucket-list[subtitle]" placeholder="Extra details?" class="col - 8 mx-auto" id="subtitle">
+              <input type="text" name="bucket-list[description]" placeholder="All the things you want to do there..."class="col - 8 mx-auto" id="description">
+              <input type="submit" class="btn btn-primary" value="Create a List Item" id="addTaskButton">
+            </fieldset>
+          </form>
 
-    footer {
-      right: 0;
-      bottom: 0;
-      font-size: 1.25em;
-      position: fixed;
-      margin-right: 50px;
-}
+          <form id="bucket-list-update">
+            <fieldset>
+              <input type="text" name="bucket-list[title]" placeholder="Change the Name of your List Item" class="col - 8 mx-auto" id="titleUpdate">
+              <input type="text" name="bucket-list[subtitle]" placeholder="Change the Subtitle of your List Item" class="col - 8 mx-auto" id="subtitleUpdate">
+              <input type="text" name="bucket-list[description]" placeholder="Change the details..." class="col - 8 mx-auto" id="descriptionUpdate">
+              <input type="text" name="bucket-list[id]" placeholder="ID number" class="mx-auto" id="taskId">
+              <input type="submit" class="btn btn-primary" value="Update one Bucket List Item" id="updateTaskButton">
+            </fieldset>
+          </form>
 
-    body {
-      font-family: 'Times New Roman', Times, serif;
-      background-size: cover;
-      background-color: palevioletred;
-      cursor: pointer;
-}
-         </style>
-  </head>
-
-  <body>
-    <header>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal" ; span style="margin-left:80px;">Sign
-        Up</span></button>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal" ; span style="margin-left:80px;">Sign
-        In</span></button>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signOutModal" ; span style="margin-left:80px;">Sign
-        Out</span></button>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal" ; span style="margin-left:80px;">Change
-        Password</span></button>
-    </header>
-    <aside>
-      <img src="public/images/S.png" alt="squirrel">
-    </aside>
-    <!-- Sign up Button -->
-    <div>
-      <div class="modal fade" id="signUpModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"></h5>
-            </div>
-            <div class="modal-body">
-              <form id='sign-up-form'>
-                <input type='text' name='credentials[email]' placeholder='Email' />
-                <input type='password' name='credentials[password]' placeholder='Password' />
-                <input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password' />
-              </form>
-              <p id='message'></p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
-              <button type="button" class="btn btn-primary" id="sign-up">SAVE</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Sign in Button -->
-    <div>
-      <div class="modal fade" id="signInModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"></h5>
-            </div>
-            <div class="modal-body">
-              <div>
-                <a class='borderTwo' href='#exampleTwo'></a>
-              </div>
-              <div class='borderTwo-content' id='exampleTwo'>
-                <form id='sign-in-form' class='borderOne'>
-                  <div>
-                    <input type='text' name='credentials[email]' placeholder='Email' />
-                    <input type='password' name='credentials[password]' placeholder='Password' />
-                    <input type='submit' id='sign-in' value='Sign In !' />
-                  </div>
-                </form>
-                <p id='message2'></p>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Change Password -->
-    <div>
-      <div class="modal fade" id="changePasswordModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"></h5>
-            </div>
-            <div class="modal-body">
-              <div>
-                <a class='borderThree' href='#exampleThree'></a>
-              </div>
-              <div class='borderThree-content' id='exampleThree'>
-                <form id='change-password-form'>
-                  <input type='password' name='password[old]' placeholder='Old Password'>
-                  <input type='password' name='password[new]' placeholder='New Password'>
-                  <input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password' />
-                  <input id='change-password' type='submit' value='Change Password'>
-                </form>
-                <p id='message4'></p>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
-            </div>
-          </div>
+          <form id="bucket-list-delete">
+            <fieldset>
+              <input type="text" name="bucket-list[id]" placeholder="Bucket List ID" id="delete-task">
+              <input type="submit" class="btn btn-primary" value="Delete Bucket List Item" id="deleteButton">
+            </fieldset>
+          </form>
         </div>
       </div>
     </div>

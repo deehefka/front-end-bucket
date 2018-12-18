@@ -7,7 +7,7 @@ const ui = require('./ui.js')
 const onSignUp = event => {
   // on // const onSignUp = function(event)
   event.preventDefault()
-  const data = getFormFields($('#sign-up-form')[0])
+  const data = getFormFields(event.target)
   // take this data and send it to the server
   // using a HTTP request
   api.signUp(data)
@@ -18,7 +18,7 @@ const onSignUp = event => {
 const onSignIn = event => {
   // on // const onSignUp = function(event)
   event.preventDefault()
-  const data = getFormFields($('#sign-in-form')[0])
+  const data = getFormFields(event.target)
   // take this data and send it to the server
   // using a HTTP request
   api.signIn(data)
@@ -37,7 +37,7 @@ const onSignOut = event => {
 const onChangePassword = event => {
   // on // const onChangePassword = function(event)
   event.preventDefault()
-  const data = getFormFields($('#change-password-form'))
+  const data = getFormFields(event.target)
   // take this data and send it to the server
   // using a HTTP request
   api.changePassword(data)
