@@ -17,31 +17,6 @@
   crossorigin=""></script>
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-
-  <style>
-    body {
-             background-image: url("public/images/bucketlist.jpg");
-             background-repeat: no-repeat;
-             background-size: 100%;
-           }
-         </style>
-  <style>
-    section {
-             @keyframes example {
-             0% {
-               left: 0px;
-             }
-
-             50% {
-               left: 200px;
-             }
-
-             100% {
-               left: 0px;
-             }
-           }
-         }
-         </style>
        </head>
 
        <body>
@@ -56,7 +31,9 @@
              Password</span></button>
          </header>
          <aside>
-            <img src="public/images/xmas.jpg" alt="squirrel">
+           <div class="squirrel">
+            <img src="public/images/S.png" alt="squirrel">
+          </div>
          </aside>
 <!-- Sign up Button -->
          <div>
@@ -131,15 +108,17 @@
                    <div>
                      <a class='borderThree' href='#exampleThree'></a>
                    </div>
-                   <div class='borderThree-content' id='exampleThree'>
                      <form id='change-password-form'>
-                       <input type='password' name='password[old]' placeholder='Old Password'>
-                       <input type='password' name='password[new]' placeholder='New Password'>
-                       <input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password' />
-                       <input id='change-password' type='submit' value='Change Password'>
+                       <fieldset>
+                         <legend>Change Password</legend>
+                         <div class='borderThree-content' id='exampleThree'>
+                           <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password" />
+                           <input class="form-control" type="password" name="passwords[new]" placeholder="New Password" />
+                           <button type="submit" class="btn btn-primary" name="submit" value="Change Password">Change Password</button>
+                         </div>
+                       </fieldset>
                      </form>
                      <p id='message4'></p>
-                   </div>
                  </div>
                  <div class="modal-footer">
                    <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
@@ -157,10 +136,12 @@
                    <h5 class="modal-title" id="exampleModalLabel"></h5>
                  </div>
                  <div class="modal-body">
-                   <form id='sign-out' class='border'>
+                   <form id='sign-out-form' class='border'>
+                     <fieldset>
                      <div>
-                       <input type='submit' value='Sign Out !' />
+                       <input type="submit" value="Sign out" />
                      </div>
+                   </fieldset>
                    </form>
                    <p id='message3'></p>
                  </div>
@@ -177,37 +158,65 @@
 
          <div class="container">
         <form id="bucket-list-index">
-          <fieldset>
+          <!-- <fieldset> -->
               <input type="submit" class="btn btn-primary" value="Show My Bucket List" id="showButton">
-          </fieldset>
+          <!-- </fieldset> -->
         </form>
+
+        <br>
+        <br>
 
         <h2 id="my-bucket-items" class="text-center"></h2>
             <form id="bucket-list-create" class="col-8 mx-auto">
+              <br>
             <div id="output"></div>
-            <fieldset>
+            <br>
+            <!-- <fieldset> -->
               <input type="text" name="bucket-list[title]" placeholder="Where do you want to go?" class="col - 8 mx-auto" id="title">
+              <br>
               <input type="text" name="bucket-list[subtitle]" placeholder="Extra details?" class="col - 8 mx-auto" id="subtitle">
+              <br>
               <input type="text" name="bucket-list[description]" placeholder="All the things you want to do there..."class="col - 8 mx-auto" id="description">
+              <br>
               <input type="submit" class="btn btn-primary" value="Create a List Item" id="addTaskButton">
-            </fieldset>
+            <!-- </fieldset> -->
           </form>
+
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
 
           <form id="bucket-list-update">
-            <fieldset>
+            <!-- <fieldset> -->
+            <br>
               <input type="text" name="bucket-list[title]" placeholder="Change the Name of your List Item" class="col - 8 mx-auto" id="titleUpdate">
+            <br>
               <input type="text" name="bucket-list[subtitle]" placeholder="Change the Subtitle of your List Item" class="col - 8 mx-auto" id="subtitleUpdate">
+            <br>
               <input type="text" name="bucket-list[description]" placeholder="Change the details..." class="col - 8 mx-auto" id="descriptionUpdate">
+            <br>
               <input type="text" name="bucket-list[id]" placeholder="ID number" class="mx-auto" id="taskId">
+            <br>
               <input type="submit" class="btn btn-primary" value="Update one Bucket List Item" id="updateTaskButton">
-            </fieldset>
+            <!-- </fieldset> -->
           </form>
 
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+
           <form id="bucket-list-delete">
-            <fieldset>
+            <!-- <fieldset> -->
+            <br>
               <input type="text" name="bucket-list[id]" placeholder="Bucket List ID" id="delete-task">
+            <br>
               <input type="submit" class="btn btn-primary" value="Delete Bucket List Item" id="deleteButton">
-            </fieldset>
+            <!-- </fieldset> -->
           </form>
         </div>
       </div>

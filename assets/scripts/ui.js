@@ -6,6 +6,7 @@ const store = require('./store.js')
 const signUpSuccess = data => {
   $('#message').text('Signed up Successfully')
   $('#message').removeClass()
+  $('#sign-up-form').trigger('reset')
   $('#message').addClass('success')
   // console.log('signUpSuccess ran. Data is :', data)
   // $('#signUpModal').modal('hide')
@@ -18,6 +19,7 @@ const signUpFailure = error => {
   $('#message').text('Error on SignUp')
   $('#message').removeClass()
   $('#message').addClass('failure')
+  $('#sign-up-form').trigger('reset')
   console.error('signUpFailure ran. Error is :', error)
 }
 
@@ -26,18 +28,20 @@ const signInSuccess = data => {
   $('#message2').text('Signed In Successfully')
   $('#message2').removeClass()
   $('#message2').addClass('success')
+  $('#sign-in-form').trigger('reset')
   // console.log('signInSuccess ran. Error is :', data)
   // $('#signInModal').modal('hide')
   window.setTimeout(function () {
     $('#signInModal').modal('hide')
   }, 1000)
-  $('#gameBoard').css('visibility', 'visible')
+  // $('#gameBoard').css('visibility', 'visible')
 }
 
 const signInFailure = error => {
   $('#message2').text('Error on SignIn')
   $('#message2').removeClass()
   $('#message2').addClass('failure')
+  $('#sign-in-form').trigger('reset')
   console.error('signInFailure ran. Error is :', error)
 }
 
@@ -51,7 +55,7 @@ const signOutSuccess = data => {
   window.setTimeout(function () {
     $('#signOutModal').modal('hide')
   }, 1000)
-  $('#gameBoard').css('visibility', 'hidden')
+  // $('#gameBoard').css('visibility', 'hidden')
 }
 
 const signOutFailure = error => {
@@ -66,6 +70,7 @@ const changePasswordSuccess = data => {
   $('#message4').text('Change Password Successfully')
   $('#message4').removeClass()
   $('#message4').addClass('success')
+  $('#change-password-form').trigger('reset')
   // console.log('changePasswordSuccess ran. Data is :', data)
   // $('#changePasswordModal').modal('hide')
   window.setTimeout(function () {
@@ -77,20 +82,21 @@ const changePasswordFailure = error => {
   $('#message4').text('Error on Change Password')
   $('#message4').removeClass()
   $('#message4').addClass('failure')
+  $('#change-password-form').trigger('reset')
   console.error('changePasswordFailure ran. Error is :', error)
 }
 
 const bucketListCreateSuccess = data => {
   store.bucketLists = data.bucketLists
-  // $('#message').text('You created an item for your to-do list!')
-  // document.getElementById('todo-item').hidden = false
+  // $('#message').text('You created an item for your Bucket list!')
+  // document.getElementById('bucket-list-item').hidden = false
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#bucket-list-create').trigger('reset')
 }
 
 const bucketListCreateFailure = data => {
-  // $('#message').text('Error on to-do item creation')
+  // $('#message').text('Error on Bucket List item creation')
   $('#message').removeClass()
   $('#message').addClass('failure')
   // console.error('signUpFailure ran. Error is :', error)
@@ -98,29 +104,29 @@ const bucketListCreateFailure = data => {
 }
 
 const bucketListDeleteSuccess = data => {
-  // $('#message').text('You deleted a To-Do list item!')
+  // $('#message').text('You deleted a Bucket list item!')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#bucket-list-delete').trigger('reset')
 }
 
 const bucketListDeleteFailure = data => {
-  // $('#message').text('Failure on todo_list delete')
+  // $('#message').text('Failure on Bucket List item delete')
   $('#message').removeClass()
   $('#message').addClass('failure')
   $('#bucket-list-delete').trigger('reset')
 }
 
 const bucketListUpdateSuccess = data => {
-  // store.todo_lists = data.todo_lists
-  // $('#message').text('You updated an item for your to-do list!')
+  store.bucketLists = data.bucketLists
+  // $('#message').text('You updated an item for your Bucket list!')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#bucket-list-update').trigger('reset')
 }
 
 const bucketListUpdateFailure = data => {
-  // $('#message').text('Error on to-do item update')
+  // $('#message').text('Error on bucket list item update')
   $('#message').removeClass()
   $('#message').addClass('failure')
   // console.error('signUpFailure ran. Error is :', error)
@@ -134,7 +140,7 @@ const bucketListIndexSuccess = data => {
   // $('#message').text('Here are all your Bucket list items!')
   // empties output
   $('#output').empty()
-  // function - for each todo list item
+  // function - for each bucket list item
   data.bucketLists.forEach(bucketList => {
     // add to output
     $('#output').append(
