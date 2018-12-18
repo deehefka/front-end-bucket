@@ -106,15 +106,17 @@
                    <div>
                      <a class='borderThree' href='#exampleThree'></a>
                    </div>
-                   <div class='borderThree-content' id='exampleThree'>
                      <form id='change-password-form'>
-                       <input type='password' name='password[old]' placeholder='Old Password'>
-                       <input type='password' name='password[new]' placeholder='New Password'>
-                       <input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password' />
-                       <input id='change-password' type='submit' value='Change Password'>
+                       <fieldset>
+                         <legend>Change Password</legend>
+                         <div class='borderThree-content' id='exampleThree'>
+                           <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password" />
+                           <input class="form-control" type="password" name="passwords[new]" placeholder="New Password" />
+                           <button type="submit" class="btn btn-primary" name="submit" value="Change Password">Change Password</button>
+                         </div>
+                       </fieldset>
                      </form>
                      <p id='message4'></p>
-                   </div>
                  </div>
                  <div class="modal-footer">
                    <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
@@ -132,10 +134,12 @@
                    <h5 class="modal-title" id="exampleModalLabel"></h5>
                  </div>
                  <div class="modal-body">
-                   <form id='sign-out' class='border'>
+                   <form id='sign-out-form' class='border'>
+                     <fieldset>
                      <div>
-                       <input type='submit' value='Sign Out !' />
+                       <input type="submit" value="Sign out" />
                      </div>
+                   </fieldset>
                    </form>
                    <p id='message3'></p>
                  </div>

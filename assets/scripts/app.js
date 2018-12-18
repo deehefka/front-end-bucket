@@ -14,10 +14,10 @@ $(() => {
   // your JS code goes here
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
-  $('#sign-out').on('submit', authEvents.onSignOut)
-  $('#change-password').on('submit', authEvents.onChangePassword)
+  $('#sign-out-form').on('click', authEvents.onSignOut)
+  $('#change-password-form').on('submit', authEvents.onChangePassword)
   $('#bucket-list-create').on('submit', authEvents.onTodoListCreate)
-  $('#bucket-list-index').on('submit', authEvents.onTodoListIndex)
+  $('#bucket-list-index').on('click', authEvents.onTodoListIndex)
   $('#bucket-list-delete').on('submit', authEvents.onTodoListDelete)
   $('#bucket-list-update').on('submit', authEvents.onTodoListUpdate)
 })
