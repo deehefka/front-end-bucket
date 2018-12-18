@@ -23,7 +23,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
   id: 'mapbox.streets',
   accessToken: 'your.mapbox.access.token'
 }).addTo(mymap)
-
+//
 // const marker = L.marker([51.5, -0.09]).addTo(mymap)
 //
 // let circle = L.circle([51.508, -0.11], {
@@ -59,5 +59,23 @@ function onMapClick(e) {
     .setContent('You clicked the map at ' + e.latlng.toString())
     .openOn(mymap)
 }
-
-mymap.on('click', onMapClick)
+//
+// const planes = [
+//   ['7C6B07', -40.99497, 174.50808],
+//   ['7C6B38', -41.30269, 173.63696],
+//   ['7C6CA1', -41.49413, 173.5421],
+//   ['7C6CA2', -40.98585, 174.50659],
+//   ['C81D9D', -40.93163, 173.81726],
+//   ['C82009', -41.5183, 174.78081],
+//   ['C82081', -41.42079, 173.5783],
+//   ['C820AB', -42.08414, 173.96632],
+//   ['C820B6', -41.51285, 173.53274]
+// ]
+//
+// mymap.on('click', onMapClick)
+//
+// for (let i = 0; i < planes.length; i++) {
+//   marker = new L.marker([planes[i][1],planes[i][2]])
+//     .bindPopup(planes[i][0])
+//     .addTo(map);
+// }
