@@ -19,7 +19,7 @@ body {
   background-image: url("public/images/bucketlist.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
-  display: flex;
+  // display: flex;
   justify-content: center;
   font-family: 'Times New Roman', Times, serif;
   background-size: cover;
@@ -35,7 +35,7 @@ body {
   background-color: green;
   animation: bounce 2.5s;
   animation-direction: alternate-reverse;
-  animation-timing-function: cubic-bezier(0.5, 0.05, 1.5);
+  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
   animation-iteration-count: infinite;
 }
 
@@ -49,6 +49,14 @@ body {
     -webkit-transform: translate3d(0, 650px, 0);
     transform: translate3d(0, 650px, 0);
   }
+}
+
+aside {
+  float: left;
+}
+
+form {
+  float: right;
 }
 
 section {
