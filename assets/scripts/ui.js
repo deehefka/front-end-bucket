@@ -18,7 +18,7 @@ const signUpFailure = error => {
   $('#message').text('Error on SignUp')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.error('signUpFailure ran. Error is :', error)
+// console.error('signUpFailure ran. Error is :', error)
 }
 
 const signInSuccess = data => {
@@ -38,7 +38,7 @@ const signInFailure = error => {
   $('#message2').text('Error on SignIn')
   $('#message2').removeClass()
   $('#message2').addClass('failure')
-  console.error('signInFailure ran. Error is :', error)
+  // console.error('signInFailure ran. Error is :', error)
 }
 
 const signOutSuccess = data => {
@@ -59,7 +59,7 @@ const signOutFailure = error => {
   $('#message3').text('Error on SignOut')
   $('#message3').removeClass()
   $('#message3').addClass('failure')
-  console.error('signOutFailure ran. Error is :', error)
+  // console.error('signOutFailure ran. Error is :', error)
 }
 
 const changePasswordSuccess = data => {
@@ -77,84 +77,7 @@ const changePasswordFailure = error => {
   $('#message4').text('Error on Change Password')
   $('#message4').removeClass()
   $('#message4').addClass('failure')
-  console.error('changePasswordFailure ran. Error is :', error)
-}
-
-const bucketListCreateSuccess = data => {
-  store.bucketLists = data.bucketLists
-  // $('#message').text('You created an item for your to-do list!')
-  // document.getElementById('todo-item').hidden = false
-  $('#message').removeClass()
-  $('#message').addClass('success')
-  $('#bucket-list-create').trigger('reset')
-}
-
-const bucketListCreateFailure = data => {
-  // $('#message').text('Error on to-do item creation')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
-  // console.error('signUpFailure ran. Error is :', error)
-  $('#bucket-list-create').trigger('reset')
-}
-
-const bucketListDeleteSuccess = data => {
-  // $('#message').text('You deleted a To-Do list item!')
-  $('#message').removeClass()
-  $('#message').addClass('success')
-  $('#bucket-list-delete').trigger('reset')
-}
-
-const bucketListDeleteFailure = data => {
-  // $('#message').text('Failure on todo_list delete')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
-  $('#bucket-list-delete').trigger('reset')
-}
-
-const bucketListUpdateSuccess = data => {
-  // store.todo_lists = data.todo_lists
-  // $('#message').text('You updated an item for your to-do list!')
-  $('#message').removeClass()
-  $('#message').addClass('success')
-  $('#bucket-list-update').trigger('reset')
-}
-
-const bucketListUpdateFailure = data => {
-  // $('#message').text('Error on to-do item update')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
-  // console.error('signUpFailure ran. Error is :', error)
-  $('#bucket-list-update').trigger('reset')
-}
-
-const bucketListIndexSuccess = data => {
-  store.bucketLists = data.bucketLists
-  // display tasks on show all click
-  // document.getElementById('output').hidden = false
-  // $('#message').text('Here are all your Bucket list items!')
-  // empties output
-  $('#output').empty()
-  // function - for each todo list item
-  data.bucketLists.forEach(bucketList => {
-    // add to output
-    $('#output').append(
-      // formatting how the tasks show to the user
-      `<div id=${bucketList.id}> <p> ${bucketList.id} </p> </div>`)
-    // calling the keys and their values and printing them out (user input)
-    for (const key in bucketList) {
-      if (key !== 'id') {
-        $(`#${bucketList.id}`).append(`<p>${key}: ${bucketList[key]}</p>`)
-      }
-    }
-  })
-  $('#message').removeClass()
-  $('#message').addClass('success')
-}
-
-const bucketListIndexFailure = data => {
-  $('#message').text('Failure on todo_list index')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  // console.error('changePasswordFailure ran. Error is :', error)
 }
 
 module.exports = {
@@ -165,13 +88,5 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure,
-  bucketListIndexFailure,
-  bucketListIndexSuccess,
-  bucketListUpdateFailure,
-  bucketListUpdateSuccess,
-  bucketListDeleteFailure,
-  bucketListDeleteSuccess,
-  bucketListCreateFailure,
-  bucketListCreateSuccess
+  changePasswordFailure
 }

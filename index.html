@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
+   <head>
+     <title>#SSS</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-  <title>#SSS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- Do not add `link` tags-->
+     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-  <!-- Do not add `link` tags-->
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
-  <!-- Do not add `script` tags-->
-  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-
-  <style>
-    body {
-             background-image: url("public/images/bucketlist.jpg");
+     <!-- Do not add `script` tags-->
+     <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+     <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+   </head>
+   <body>
+       <style>
+         body {
+             background: url("img/bucketlist.jpg");
              background-repeat: no-repeat;
              background-size: 100%;
            }
          </style>
-  <style>
-    section {
+       <style>
+         section {
              @keyframes example {
              0% {
                left: 0px;
@@ -40,17 +40,17 @@
 
        <body>
          <header>
-           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Sign
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal" ; span style="margin-left:80px;">Sign
              Up</span></button>
-           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">Sign
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal" ; span style="margin-left:80px;">Sign
              In</span></button>
-           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signOutModal">Sign
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signOutModal" ; span style="margin-left:80px;">Sign
              Out</span></button>
-           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">Change
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal" ; span style="margin-left:80px;">Change
              Password</span></button>
          </header>
          <aside>
-            <img src="public/images/xmas.jpg" alt="squirrel">
+           <img src="img/Xmas.jpg" alt="squirrel">
          </aside>
 <!-- Sign up Button -->
          <div>
@@ -62,18 +62,15 @@
                  </div>
                  <div class="modal-body">
                    <form id='sign-up-form'>
-                     <fieldset>
-                       <legend>Sign up</legend>
-                       <input class="form-control" type='text' name='credentials[email]' placeholder='Email' />
-                       <input class="form-control" type='password' name='credentials[password]' placeholder='Password' />
-                       <input class="form-control" type='password' name='credentials[password_confirmation]' placeholder='Confirm Password' />
-                       <button type="submit" class="btn btn-primary" name="submit" value="Sign Up">Sign Up</button>
-                   </fieldset>
+                     <input type='text' name='credentials[email]' placeholder='Email' />
+                     <input type='password' name='credentials[password]' placeholder='Password' />
+                     <input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password' />
                    </form>
                    <p id='message'></p>
                  </div>
                  <div class="modal-footer">
                    <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                   <button type="button" class="btn btn-primary" id="sign-up">SAVE</button>
                  </div>
                </div>
              </div>
@@ -93,14 +90,11 @@
                    </div>
                    <div class='borderTwo-content' id='exampleTwo'>
                      <form id='sign-in-form' class='borderOne'>
-                       <fieldset>
-                         <legend>Sign In</legend>
                        <div>
-                         <input class="form-control" type='text' name='credentials[email]' placeholder='Email' />
-                         <input class="form-control" type='password' name='credentials[password]' placeholder='Password' />
-                         <button type="submit" class="btn btn-primary" name="submit" value="Sign In">Sign In</button>
+                         <input type='text' name='credentials[email]' placeholder='Email' />
+                         <input type='password' name='credentials[password]' placeholder='Password' />
+                         <input type='submit' id='sign-in' value='Sign In !' />
                        </div>
-                     </fieldset>
                      </form>
                      <p id='message2'></p>
                    </div>
@@ -166,118 +160,13 @@
            </div>
          </div>
          <section>
-           <img src="public/images/S.png" alt="squirrel">
+           <img src="img/S.png" alt="squirrel">
          </section>
 
-         <div class="container">
-        <form id="bucket-list-index">
-          <fieldset>
-              <input type="submit" class="btn btn-primary" value="Show My Bucket List" id="showButton">
-          </fieldset>
-        </form>
+         <footer>
+           <p>&copy; #Sleepy Squirrel Squad ! (all rights reserved)</p>
+         </footer>
 
-        <h2 id="my-bucket-items" class="text-center"></h2>
-            <form id="bucket-list-create" class="col-8 mx-auto">
-            <div id="output"></div>
-            <fieldset>
-              <input type="text" name="bucket-list[title]" placeholder="Where do you want to go?" class="col - 8 mx-auto" id="title">
-              <input type="text" name="bucket-list[subtitle]" placeholder="Extra details?" class="col - 8 mx-auto" id="subtitle">
-              <input type="text" name="bucket-list[description]" placeholder="All the things you want to do there..."class="col - 8 mx-auto" id="description">
-              <input type="submit" class="btn btn-primary" value="Create a List Item" id="addTaskButton">
-            </fieldset>
-          </form>
+       </body>
 
-          <form id="bucket-list-update">
-            <fieldset>
-              <input type="text" name="bucket-list[title]" placeholder="Change the Name of your List Item" class="col - 8 mx-auto" id="titleUpdate">
-              <input type="text" name="bucket-list[subtitle]" placeholder="Change the Subtitle of your List Item" class="col - 8 mx-auto" id="subtitleUpdate">
-              <input type="text" name="bucket-list[description]" placeholder="Change the details..." class="col - 8 mx-auto" id="descriptionUpdate">
-              <input type="text" name="bucket-list[id]" placeholder="ID number" class="mx-auto" id="taskId">
-              <input type="submit" class="btn btn-primary" value="Update one Bucket List Item" id="updateTaskButton">
-            </fieldset>
-          </form>
-
-          <form id="bucket-list-delete">
-            <fieldset>
-              <input type="text" name="bucket-list[id]" placeholder="Bucket List ID" id="delete-task">
-              <input type="submit" class="btn btn-primary" value="Delete Bucket List Item" id="deleteButton">
-            </fieldset>
-          </form>
-        </div>
-      </div>
-    </div>
-    <!-- Sign out Button -->
-    <div>
-      <div class="modal fade" id="signOutModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"></h5>
-            </div>
-            <div class="modal-body">
-              <form id='sign-out' class='border'>
-                <div>
-                  <input type='submit' value='Sign Out !' />
-                </div>
-              </form>
-              <p id='message3'></p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <section>
-      <img src="public/images/xmas.jpg" alt="squirrel">
-    </section>
-
-    <div class="container">
-      <form id="bucket-list-index">
-        <fieldset>
-          <input type="submit" class="btn btn-primary" value="Show My Bucket List" id="showButton">
-        </fieldset>
-      </form>
-
-      <h2 id="my-bucket-items" class="text-center"></h2>
-      <form id="bucket-list-create" class="col-8 mx-auto">
-        <div id="output"></div>
-        <fieldset>
-          <input type="text" name="bucket-list[title]" placeholder="Where do you want to go?" class="col - 8 mx-auto"
-            id="title">
-          <input type="text" name="bucket-list[subtitle]" placeholder="Extra details?" class="col - 8 mx-auto" id="subtitle">
-          <input type="text" name="bucket-list[description]" placeholder="All the things you want to do there..." class="col - 8 mx-auto"
-            id="description">
-          <input type="submit" class="btn btn-primary" value="Create a List Item" id="addTaskButton">
-        </fieldset>
-      </form>
-
-      <form id="bucket-list-update">
-        <fieldset>
-          <input type="text" name="bucket-list[title]" placeholder="Change the Name of your List Item" class="col - 8 mx-auto"
-            id="titleUpdate">
-          <input type="text" name="bucket-list[subtitle]" placeholder="Change the Subtitle of your List Item" class="col - 8 mx-auto"
-            id="subtitleUpdate">
-          <input type="text" name="bucket-list[description]" placeholder="Change the details..." class="col - 8 mx-auto"
-            id="descriptionUpdate">
-          <input type="text" name="bucket-list[id]" placeholder="ID number" class="mx-auto" id="taskId">
-          <input type="submit" class="btn btn-primary" value="Update one Bucket List Item" id="updateTaskButton">
-        </fieldset>
-      </form>
-
-      <form id="bucket-list-delete">
-        <fieldset>
-          <input type="text" name="bucket-list[id]" placeholder="Bucket List ID" id="delete-task">
-          <input type="submit" class="btn btn-primary" value="Delete Bucket List Item" id="deleteButton">
-        </fieldset>
-      </form>
-    </div>
-
-    <footer>
-      <p>&copy; #Sleepy Squirrel Squad ! (all rights reserved)</p>
-    </footer>
-
-  </body>
-
-</html>
+      </html>
