@@ -98,6 +98,7 @@ const changePasswordFailure = error => {
 
 const bucketListCreateSuccess = data => {
   store.bucketLists = data.bucketLists
+  console.log(data)
   // $('#message').text('You created an item for your Bucket list!')
   // document.getElementById('bucket-list-item').hidden = false
   $('#message').removeClass()
