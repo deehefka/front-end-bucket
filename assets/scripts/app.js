@@ -28,8 +28,8 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
 
   // Bucket List CRUD Actions
-  $('#bucket-list-create').on('submit', authEvents.onTodoListCreate)
-  $('#bucket-list-index').on('click', authEvents.onTodoListIndex)
-  $('#bucket-list-delete').on('submit', authEvents.onTodoListDelete)
-  $('#bucket-list-update').on('submit', authEvents.onTodoListUpdate)
+  $('#bucket-list-create').on('submit', authEvents.onBucketListCreate)
+  $('#bucket-list-index').on('click', authEvents.onBucketListIndex)
+  $('#bucket-list-delete').on('submit', authEvents.onBucketListDelete)
+  $('#bucket-list-update').on('submit', authEvents.onBucketListUpdate)
 })
