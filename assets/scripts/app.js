@@ -18,6 +18,7 @@ $(() => {
     $('#sign-in-btn').show()
     $('#sign-out-btn').hide()
     $('#password-btn').hide()
+    $('#showModal').hide()
   }
   // Auth CRUD Actions
   $('#sign-up-form').on('submit', authEvents.onSignUp)
