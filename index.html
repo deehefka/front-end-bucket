@@ -35,6 +35,8 @@
              Out</span></button>
            <button type="button" id="password-btn" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">Change
              Password</span></button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showButtonModal">Show My Bucket
+             List</span></button>
          </header>
 
 <!-- Sign up Button -->
@@ -156,76 +158,77 @@
          </div>
 
 <br>
-         <div class="container">
-        <form id="bucket-list-index">
-          <!-- <fieldset> -->
-              <input type="submit" class="btn btn-primary" value="Show My Bucket List" id="showButton">
-          <!-- </fieldset> -->
-        </form>
 
-        <br>
-        <div id="output"></div>
-        <br>
+<div id="output"></div>
 
-        <h2 id="my-bucket-items" class="text-center"></h2>
-            <form id="bucket-list-create">
-            <!-- <fieldset> -->
-<<<<<<< HEAD
-              <input type="text" name="bucketList[title]" placeholder="Where do you want to go?" class="col - 8 mx-auto" id="title">
-              <br>
-              <input type="text" name="bucketList[subtitle]" placeholder="Extra details?" class="col - 8 mx-auto" id="subtitle">
-              <br>
-              <input type="text" name="bucketList[description]" placeholder="All the things you want to do there..."class="col - 8 mx-auto" id="description">
-=======
-              <input type="text" name="bucket-list[title]" placeholder="Where do you want to go?" id="title">
-              <br>
-              <input type="text" name="bucket-list[subtitle]" placeholder="Extra details?" id="subtitle">
-              <br>
-              <input type="text" name="bucket-list[description]" placeholder="All the things you want to do there..." id="description">
->>>>>>> css and html
-              <br>
-              <input type="submit" class="btn btn-primary" value="Create a List Item" id="addTaskButton">
-            <!-- </fieldset> -->
-          </form>
+<br>
 
-          <br>
+<!-- Bucket Container Information -->
+ <div>
+   <div class="modal fade" id="showButtonModal">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="exampleModalLabel"></h5>
+         </div>
 
-          <form id="bucket-list-update">
-            <!-- <fieldset> -->
-            <br>
-<<<<<<< HEAD
-              <input type="text" name="bucketList[title]" placeholder="Change the Name of your List Item" class="col - 8 mx-auto" id="titleUpdate">
-            <br>
-              <input type="text" name="bucketList[subtitle]" placeholder="Change the Subtitle of your List Item" class="col - 8 mx-auto" id="subtitleUpdate">
-            <br>
-              <input type="text" name="bucketList[description]" placeholder="Change the details..." class="col - 8 mx-auto" id="descriptionUpdate">
-            <br>
-              <input type="text" name="bucketList[id]" placeholder="ID number" class="mx-auto" id="taskId">
-=======
-              <input type="text" name="bucket-list[title]" placeholder="Change the Name of your List Item" id="titleUpdate">
-            <br>
-              <input type="text" name="bucket-list[subtitle]" placeholder="Change the Subtitle of your List Item" id="subtitleUpdate">
-            <br>
-              <input type="text" name="bucket-list[description]" placeholder="Change the details..." id="descriptionUpdate">
-            <br>
-              <input type="text" name="bucket-list[id]" placeholder="ID number" id="taskId">
->>>>>>> css and html
-            <br>
-              <input type="submit" class="btn btn-primary" value="Update one Bucket List Item" id="updateTaskButton">
-            <!-- </fieldset> -->
-          </form>
 
-          <br>
+         <div class="form">
+           <div class="container">
+             <form id="bucket-list-index">
+               <!-- <fieldset> -->
+               <!-- <input type="submit" class="btn btn-primary" value="Show My Bucket List" id="showButton"> -->
+               <!-- </fieldset> -->
+             </form>
 
-          <form id="bucket-list-delete">
-            <!-- <fieldset> -->
-            <br>
-              <input type="text" name="bucketList[id]" placeholder="Bucket List ID" id="delete-task">
-            <br>
-              <input type="submit" class="btn btn-primary" value="Delete Bucket List Item" id="deleteButton">
-            <!-- </fieldset> -->
-          </form>
-        </div>
+             <h2 id="my-bucket-items" class="text-center"></h2>
+             <form id="bucket-list-create" class="col-8 mx-auto">
+               <!-- <fieldset> -->
+               <input type="text" name="bucket-list[title]" placeholder="Where do you want to go?" class="col - 8 mx-auto"
+                 id="title">
+               <br>
+               <input type="text" name="bucket-list[subtitle]" placeholder="Extra details?" class="col - 8 mx-auto" id="subtitle">
+               <br>
+               <input type="text" name="bucket-list[description]" placeholder="All the things you want to do there..."
+                 class="col - 8 mx-auto" id="description">
+               <br>
+               <input type="submit" class="btn btn-primary" value="Create a List Item" id="addTaskButton">
+               <!-- </fieldset> -->
+             </form>
+
+             <form id="bucket-list-update">
+               <!-- <fieldset> -->
+               <input type="text" name="bucket-list[title]" placeholder="Change the Name of your List Item" class="col - 8 mx-auto"
+                 id="titleUpdate">
+               <br>
+               <input type="text" name="bucket-list[subtitle]" placeholder="Change the Subtitle of your List Item"
+                 class="col - 8 mx-auto" id="subtitleUpdate">
+               <br>
+               <input type="text" name="bucket-list[description]" placeholder="Change the details..." class="col - 8 mx-auto"
+                 id="descriptionUpdate">
+               <br>
+               <input type="text" name="bucket-list[id]" placeholder="ID number" class="mx-auto" id="taskId">
+               <br>
+               <input type="submit" class="btn btn-primary" value="Update one Bucket List Item" id="updateTaskButton">
+               <!-- </fieldset> -->
+             </form>
+
+             <form id="bucket-list-delete">
+               <!-- <fieldset> -->
+               <input type="text" name="bucket-list[id]" placeholder="Bucket List ID" id="delete-task">
+               <br>
+               <input type="submit" class="btn btn-primary" value="Delete Bucket List Item" id="deleteButton">
+               <!-- </fieldset> -->
+             </form>
+           </div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 
 
         <aside>
