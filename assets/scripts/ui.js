@@ -30,6 +30,7 @@ const signInSuccess = data => {
   $('#sign-in-btn').hide()
   $('#sign-out-btn').show()
   $('#password-btn').show()
+  $('#showModal').show()
   $('#message2').text('Signed In Successfully')
   $('#message2').removeClass()
   $('#message2').addClass('success')
