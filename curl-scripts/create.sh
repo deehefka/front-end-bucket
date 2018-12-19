@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl --include --request POST "https://wdi-library-api.herokuapp.com/books/" \
+curl --include --request POST "https://boiling-temple-34705.herokuapp.com/bucketList/" \
   --header "Content-type: application/json" \
   --data '{
     "bucketList": {

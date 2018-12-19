@@ -17,60 +17,241 @@
   width: 600px;
 }
 
+//  PYRO Fireworks
+$particles: 50;
+$width: 500;
+$height: 500;
+
+// Create the explosion...
+$box-shadow: ();
+$box-shadow2: ();
+
+@for $i from 0 through $particles {
+  $box-shadow: $box-shadow,
+    random($width) -$width / 2 + px
+    random($height) -$height / 1.2 + px
+    hsl(random(360), 100, 50);
+  $box-shadow2: $box-shadow2, 0 0 #fff;
+}
+
+@mixin keyframes ($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content
+}
+
+  @-moz-keyframes #{$animationName} {
+    @content
+}
+
+  @-o-keyframes #{$animationName} {
+    @content
+}
+
+  @-ms-keyframes #{$animationName} {
+    @content
+}
+
+  @keyframes #{$animationName} {
+    @content
+  }
+}
+
+@mixin animation-delay ($settings) {
+  -moz-animation-delay: $settings;
+  -webkit-animation-delay: $settings;
+  -o-animation-delay: $settings;
+  -ms-animation-delay: $settings;
+  animation-delay: $settings;
+}
+
+@mixin animation-duration ($settings) {
+  -moz-animation-duration: $settings;
+  -webkit-animation-duration: $settings;
+  -o-animation-duration: $settings;
+  -ms-animation-duration: $settings;
+  animation-duration: $settings;
+}
+
+@mixin animation ($settings) {
+  -moz-animation: $settings;
+  -webkit-animation: $settings;
+  -o-animation: $settings;
+  -ms-animation: $settings;
+  animation: $settings;
+}
+
+@mixin transform ($settings) {
+  transform: $settings;
+  -moz-transform: $settings;
+  -webkit-transform: $settings;
+  -o-transform: $settings;
+  -ms-transform: $settings;
+}
+
+.pyro > .before, .pyro > .after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: $box-shadow2;
+  @include animation((1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards));
+}
+
+.pyro > .after {
+  @include animation-delay((1.25s, 1.25s, 1.25s));
+  @include animation-duration((1.25s, 1.25s, 6.25s));
+}
+
+@include keyframes(bang) {
+  to {
+    box-shadow: $box-shadow;
+  }
+}
+
+@include keyframes(gravity) {
+  to {
+    @include transform(translateY(200px));
+
+    opacity: 0;
+  }
+}
+
+@include keyframes(position) {
+
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%;
+  }
+
+  40%, 59.9% {
+    margin-top: 20%;
+    margin-left: 70%;
+  }
+
+  60%, 79.9% {
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+
+  80%, 99.9% {
+    margin-top: 30%;
+    margin-left: 80%;
+  }
+}
+
 body {
-  background-image: url("public/images/bucketlist.jpg");
+  background: url("public/images/bucketlist.jpg") no-repeat 25% 25% fixed;
   background-repeat: no-repeat;
-  background-size: 100%;
+  // background-size: 120%;
   // display: flex;
   justify-content: center;
   font-family: 'Times New Roman', Times, serif;
   background-size: cover;
   background-color: palevioletred;
   cursor: pointer;
+
+  // PYRO SCSS
+  margin: 0;
+  padding: 0;
+  // background: #000;
+  overflow: hidden;
 }
 
 .squirrel {
-  float: left;
-  width: 50px;
-  height: 50px;
+  margin: 0 auto;
+  width: 600px;
+  height: 600px;
+  position: relative;
+}
+
+.squirrel {
+  display: block;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background-color: green;
-  animation: bounce 2.5s;
-  animation-direction: alternate-reverse;
-  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
-  animation-iteration-count: infinite;
+  background-color: #3673cf;
+  // box-shadow: inset -5px -5px 5px rgba(0,0,0,.6), 15px 15px 2px rgba(0,0,0,.04);
+  position: absolute;
+  -webkit-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  -moz-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  -o-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
 }
 
-@-webkit-keyframes bounce {
-  from {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 650px, 0);
-    transform: translate3d(0, 650px, 0);
-  }
+@-webkit-keyframes moveX {
+  from { left: 0; }
+  to { left: 480px; }
 }
 
-aside {
-  float: left;
+@-moz-keyframes moveX {
+  from { left: 0; }
+  to { left: 480px; }
 }
 
-form {
-  float: right;
+@-o-keyframes moveX {
+  from { left: 0; }
+  to { left: 480px; }
+}
+
+@keyframes moveX {
+  from { left: 0; }
+  to { left: 480px; }
+}
+
+@-webkit-keyframes moveY {
+  from { top: 0; }
+  to { top: 280px; }
+}
+
+@-moz-keyframes moveY {
+  from { top: 0; }
+  to { top: 280px; }
+}
+
+@-o-keyframes moveY {
+  from { top: 0; }
+  to { top: 280px; }
+}
+
+@keyframes moveY {
+  from { top: 0; }
+  to { top: 280px; }
 }
 
 section {
   color: transparent;
   position: fixed;
   bottom: 0;
-  right: 600px;
+  right: 450px;
   border-radius: 50%;
 }
 
-img {
+aside {
+  float: left;
   border-radius: 50%;
+}
+
+.squirrelTwo {
+  border-radius: 50%;
+}
+
+// img {
+//   border-radius: 50%;
+// }
+
+.form {
+  float: right;
+}
+
+.a {
+  position: relative;
+  top: 438px;
+  left: 950px;
 }
 
 /* The Modal (background) */
@@ -123,6 +304,35 @@ footer {
   position: fixed;
   margin-right: 50px;
 }
+
+#output {
+  text-align: left;
+  // background-color: rgba(189, 233, 249, 0.7);
+  // border-style: solid;
+  // padding-bottom: 1px;
+  margin: 30px;
+}
+
+// #addTaskButton {
+//   float: left;
+//   margin: 0;
+// }
+
+// #showButton {
+//   // display: block;
+//   float: left;
+//   margin: 0;
+// }
+//
+// #updateTaskButton {
+//   float: left;
+//   margin: 0;
+// }
+
+// #deleteButton {
+//   float: left;
+//   margin: 0;
+// }
 
 // body {
 //   font-family: 'Times New Roman', Times, serif;

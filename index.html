@@ -20,6 +20,12 @@
        </head>
 
        <body>
+         <!-- PYRO Fireworks -->
+         <div class="pyro">
+           <div class="before"></div>
+           <div class="after"></div>
+         </div>
+         <!-- Header Buttons -->
          <header>
            <button type="button" id="sign-up-btn" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Sign
              Up</span></button>
@@ -29,12 +35,10 @@
              Out</span></button>
            <button type="button" id="password-btn" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">Change
              Password</span></button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showButtonModal">Show My Bucket
+             List</span></button>
          </header>
-         <aside>
-           <div class="squirrel">
-            <img src="public/images/S.png" alt="squirrel">
-          </div>
-         </aside>
+
 <!-- Sign up Button -->
          <div>
            <div class="modal fade" id="signUpModal">
@@ -152,103 +156,99 @@
              </div>
            </div>
          </div>
-         <section>
-           <img src="public/images/S.png" alt="squirrel">
-         </section>
 
-         <div class="container">
-        <form id="bucket-list-index">
-          <!-- <fieldset> -->
-              <input type="submit" class="btn btn-primary" value="Show My Bucket List" id="showButton">
-          <!-- </fieldset> -->
-        </form>
+<br>
 
-        <br>
-        <br>
+<div id="output"></div>
 
-        <h2 id="my-bucket-items" class="text-center"></h2>
-            <form id="bucket-list-create" class="col-8 mx-auto">
-              <br>
-            <div id="output"></div>
-            <br>
-            <!-- <fieldset> -->
-              <input type="text" name="bucket-list[title]" placeholder="Where do you want to go?" class="col - 8 mx-auto" id="title">
-              <br>
-              <input type="text" name="bucket-list[subtitle]" placeholder="Extra details?" class="col - 8 mx-auto" id="subtitle">
-              <br>
-              <input type="text" name="bucket-list[description]" placeholder="All the things you want to do there..."class="col - 8 mx-auto" id="description">
-              <br>
-              <input type="submit" class="btn btn-primary" value="Create a List Item" id="addTaskButton">
-            <!-- </fieldset> -->
-          </form>
+<br>
 
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
+<!-- Bucket Container Information -->
+ <div>
+   <div class="modal fade" id="showButtonModal">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="exampleModalLabel"></h5>
+         </div>
 
-          <form id="bucket-list-update">
-            <!-- <fieldset> -->
-            <br>
-              <input type="text" name="bucket-list[title]" placeholder="Change the Name of your List Item" class="col - 8 mx-auto" id="titleUpdate">
-            <br>
-              <input type="text" name="bucket-list[subtitle]" placeholder="Change the Subtitle of your List Item" class="col - 8 mx-auto" id="subtitleUpdate">
-            <br>
-              <input type="text" name="bucket-list[description]" placeholder="Change the details..." class="col - 8 mx-auto" id="descriptionUpdate">
-            <br>
-              <input type="text" name="bucket-list[id]" placeholder="ID number" class="mx-auto" id="taskId">
-            <br>
-              <input type="submit" class="btn btn-primary" value="Update one Bucket List Item" id="updateTaskButton">
-            <!-- </fieldset> -->
-          </form>
 
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
+         <div class="form">
+           <div class="container">
+             <form id="bucket-list-index">
+               <!-- <fieldset> -->
+               <!-- <input type="submit" class="btn btn-primary" value="Show My Bucket List" id="showButton"> -->
+               <!-- </fieldset> -->
+             </form>
 
-          <form id="bucket-list-delete">
-            <!-- <fieldset> -->
-            <br>
-              <input type="text" name="bucket-list[id]" placeholder="Bucket List ID" id="delete-task">
-            <br>
-              <input type="submit" class="btn btn-primary" value="Delete Bucket List Item" id="deleteButton">
-            <!-- </fieldset> -->
-          </form>
-        </div>
-      </div>
-    </div>
-    <!-- Sign out Button -->
-    <div>
-      <div class="modal fade" id="signOutModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"></h5>
-            </div>
-            <div class="modal-body">
-              <form id='sign-out' class='border'>
-                <div>
-                  <input type='submit' value='Sign Out !' />
-                </div>
-              </form>
-              <p id='message3'></p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
-            </div>
+             <h2 id="my-bucket-items" class="text-center"></h2>
+             <form id="bucket-list-create" class="col-8 mx-auto">
+               <!-- <fieldset> -->
+               <input type="text" name="bucket-list[title]" placeholder="Where do you want to go?" class="col - 8 mx-auto"
+                 id="title">
+               <br>
+               <input type="text" name="bucket-list[subtitle]" placeholder="Extra details?" class="col - 8 mx-auto" id="subtitle">
+               <br>
+               <input type="text" name="bucket-list[description]" placeholder="All the things you want to do there..."
+                 class="col - 8 mx-auto" id="description">
+               <br>
+               <input type="submit" class="btn btn-primary" value="Create a List Item" id="addTaskButton">
+               <!-- </fieldset> -->
+             </form>
+
+             <form id="bucket-list-update">
+               <!-- <fieldset> -->
+               <input type="text" name="bucket-list[title]" placeholder="Change the Name of your List Item" class="col - 8 mx-auto"
+                 id="titleUpdate">
+               <br>
+               <input type="text" name="bucket-list[subtitle]" placeholder="Change the Subtitle of your List Item"
+                 class="col - 8 mx-auto" id="subtitleUpdate">
+               <br>
+               <input type="text" name="bucket-list[description]" placeholder="Change the details..." class="col - 8 mx-auto"
+                 id="descriptionUpdate">
+               <br>
+               <input type="text" name="bucket-list[id]" placeholder="ID number" class="mx-auto" id="taskId">
+               <br>
+               <input type="submit" class="btn btn-primary" value="Update one Bucket List Item" id="updateTaskButton">
+               <!-- </fieldset> -->
+             </form>
+
+             <form id="bucket-list-delete">
+               <!-- <fieldset> -->
+               <input type="text" name="bucket-list[id]" placeholder="Bucket List ID" id="delete-task">
+               <br>
+               <input type="submit" class="btn btn-primary" value="Delete Bucket List Item" id="deleteButton">
+               <!-- </fieldset> -->
+             </form>
+           </div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+
+        <aside>
+          <div class="squirrel">
+          <img src="public/images/S.png" alt="squirrel" style="border-radius: 50%">
           </div>
+        </aside>
+
+        <section>
+          <div class="squirrelTwo">
+            <img src="public/images/xmas.jpg" alt="squirrel" style="border-radius: 50%">
+        </section>
+
+        <div class="a">
+          <div id="mapid"></div>
         </div>
-      </div>
-    </div>
-      <div id="mapid"></div>
-    <section>
-      <img src="public/images/xmas.jpg" alt="squirrel">
-    </section>
-    </div>
+
+        <br>
+        <br>
+        <br>
 
     <footer>
       <p>&copy; #Sleepy Squirrel Squad ! (all rights reserved)</p>
