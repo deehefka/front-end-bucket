@@ -7,17 +7,29 @@
 // require('./example')
 
 const authEvents = require('./event.js')
+const store = require('./store.js')
 
 // const JS = require('./JS.js')
 
 $(() => {
-  // your JS code goes here
+  store.userSignedIn = false
+  if (store.userSignedIn === false) {
+    $('#sign-up-btn').show()
+    $('#sign-in-btn').show()
+    $('#sign-out-btn').hide()
+    $('#password-btn').hide()
+  }
+  // Auth CRUD Actions
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#sign-out-form').on('click', authEvents.onSignOut)
   $('#change-password-form').on('submit', authEvents.onChangePassword)
-  $('#bucket-list-create').on('submit', authEvents.onTodoListCreate)
-  $('#bucket-list-index').on('click', authEvents.onTodoListIndex)
-  $('#bucket-list-delete').on('submit', authEvents.onTodoListDelete)
-  $('#bucket-list-update').on('submit', authEvents.onTodoListUpdate)
+  $('#sign-out-form').on('submit', authEvents.onSignOut)
+  $('#change-password').on('submit', authEvents.onChangePassword)
+
+  // Bucket List CRUD Actions
+  $('#bucket-list-create').on('submit', authEvents.onBucketListCreate)
+  $('#bucket-list-index').on('click', authEvents.onBucketListIndex)
+  $('#bucket-list-delete').on('submit', authEvents.onBucketListDelete)
+  $('#bucket-list-update').on('submit', authEvents.onBucketListUpdate)
 })
