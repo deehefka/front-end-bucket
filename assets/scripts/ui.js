@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('./store.js')
+const bucketListTemplate = require('./bucketlist.handlebars')
 
 // methods signUpSuccess,signUpFailure
 const signUpSuccess = data => {
@@ -147,25 +148,11 @@ const bucketListUpdateFailure = data => {
 }
 
 const bucketListIndexSuccess = data => {
-  store.bucketLists = data.bucketLists
-  // display tasks on show all click
-  // document.getElementById('output').hidden = false
-  // $('#message').text('Here are all your Bucket list items!')
-  // empties output
   $('#output').empty()
-  // function - for each bucket list item
-  data.bucketLists.forEach(bucketList => {
-    // add to output
-    $('#output').append(
-      // formatting how the tasks show to the user
-      `<div id=${bucketList.id}> <p> ${bucketList.id} </p> </div>`)
-    // calling the keys and their values and printing them out (user input)
-    for (const key in bucketList) {
-      if (key !== 'id') {
-        $(`#${bucketList.id}`).append(`<p>${key}: ${bucketList[key]}</p>`)
-      }
-    }
-  })
+
+  const showbucketListHtml = bucketListTemplate({ bucketLists: data.bucketLists })
+  $('#output').append(showbucketListHtml)
+
   $('#message5').text('Here is your Bucket List!')
   $('#message5').removeClass()
   $('#message5').addClass('success')
