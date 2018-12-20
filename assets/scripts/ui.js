@@ -66,6 +66,7 @@ const signOutSuccess = data => {
   $('#message3').text('Signed Out Successfully')
   $('#message3').removeClass()
   $('#message3').addClass('success')
+  $('#message2').empty()
   // console.log('signOutSuccess ran. Error is :')
   // $('#signOutModal').modal('hide')
   window.setTimeout(function () {
