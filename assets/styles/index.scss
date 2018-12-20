@@ -14,7 +14,7 @@
 
 #mapid {
   height: 400px;
-  width: 600px;
+  width: 350px;
 }
 
 //  PYRO Fireworks
@@ -144,6 +144,18 @@ $box-shadow2: ();
   }
 }
 
+.video {
+  cursor: pointer;
+  color: transparent;
+  position: fixed;
+  bottom: 680px;
+  right: 8px;
+}
+
+// .animation-content {
+//   display: hidden;
+// }
+
 body {
   background: url("public/images/bucketlist.jpg") no-repeat 25% 25% fixed;
   background-repeat: no-repeat;
@@ -227,8 +239,8 @@ section {
   color: transparent;
   position: fixed;
   bottom: 0;
-  right: 450px;
-  border-radius: 50%;
+  right: 600px;
+  // border-radius: 50%;
 }
 
 aside {
@@ -249,10 +261,14 @@ aside {
 }
 
 .a {
-  position: relative;
-  top: 380px;
-  left: 800px;
+  position: absolute;
+  top: 480px;
+  left: 1075px;
 }
+
+// .video {
+//
+// }
 
 /* The Modal (background) */
 .modal {
@@ -298,13 +314,34 @@ legend {
 }
 
 footer {
-  right: 0;
-  bottom: 0;
-  font-size: 1.25em;
-  position: fixed;
-  margin-right: 50px;
-  color: white;
+ left: 0;
+ bottom: 0;
+ font-size: 1.25em;
+ position: fixed;
+ margin-right: 50px;
+ color: gold;
 }
+
+#message {
+  color: red;
+}
+
+#message2 {
+  color: red;
+}
+
+#message3 {
+  color: red;
+}
+
+#message4 {
+  color: red;
+}
+
+#message5 {
+  color: red;
+}
+
 
 #output {
   text-align: left;
@@ -313,6 +350,11 @@ footer {
   // padding-bottom: 1px;
   margin: 30px;
   color: white;
+}
+
+.whereYouGo {
+  color: yellow;
+  font-size: 16px;
 }
 
 // #addTaskButton {

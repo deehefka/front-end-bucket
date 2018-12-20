@@ -1,7 +1,9 @@
 'use strict'
 
 const store = require('./store.js')
+const bucketListTemplate = require('./bucketlist.handlebars')
 
+$('#animation-content').hide()
 // methods signUpSuccess,signUpFailure
 const signUpSuccess = data => {
   $('#message').text('Signed up Successfully')
@@ -30,6 +32,7 @@ const signInSuccess = data => {
   $('#sign-in-btn').hide()
   $('#sign-out-btn').show()
   $('#password-btn').show()
+  $('#animation-content').show()
   $('#showModal').show()
   $('#message2').text('Signed In Successfully')
   $('#message2').removeClass()
@@ -39,7 +42,7 @@ const signInSuccess = data => {
   // $('#signInModal').modal('hide')
   window.setTimeout(function () {
     $('#signInModal').modal('hide')
-  }, 1000)
+  }, 500)
   // $('#gameBoard').css('visibility', 'visible')
 }
 
@@ -57,6 +60,8 @@ const signOutSuccess = data => {
   $('#sign-in-btn').show()
   $('#sign-out-btn').hide()
   $('#password-btn').hide()
+  $('#animation-content').hide()
+  $('#showModal').hide()
   store.user = null
   $('#message3').text('Signed Out Successfully')
   $('#message3').removeClass()
@@ -65,7 +70,7 @@ const signOutSuccess = data => {
   // $('#signOutModal').modal('hide')
   window.setTimeout(function () {
     $('#signOutModal').modal('hide')
-  }, 1000)
+  }, 500)
   // $('#gameBoard').css('visibility', 'hidden')
 }
 
@@ -100,79 +105,67 @@ const changePasswordFailure = error => {
 const bucketListCreateSuccess = data => {
   store.bucketLists = data.bucketLists
   console.log(data)
-  // $('#message').text('You created an item for your Bucket list!')
+  $('#message5').text('You created an item for your Bucket list!')
   // document.getElementById('bucket-list-item').hidden = false
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message5').removeClass()
+  $('#message5').addClass('success')
   $('#bucket-list-create').trigger('reset')
 }
 
 const bucketListCreateFailure = data => {
-  // $('#message').text('Error on Bucket List item creation')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message5').text('Error on Bucket List item creation')
+  $('#message5').removeClass()
+  $('#message5').addClass('failure')
   // console.error('signUpFailure ran. Error is :', error)
   $('#bucket-list-create').trigger('reset')
 }
 
 const bucketListDeleteSuccess = data => {
-  // $('#message').text('You deleted a Bucket list item!')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message5').text('You deleted a Bucket list item!')
+  $('#message5').removeClass()
+  $('#message5').addClass('success')
   $('#bucket-list-delete').trigger('reset')
 }
 
 const bucketListDeleteFailure = data => {
-  // $('#message').text('Failure on Bucket List item delete')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message5').text('Failure on Bucket List item delete')
+  $('#message5').removeClass()
+  $('#message5').addClass('failure')
   $('#bucket-list-delete').trigger('reset')
 }
 
 const bucketListUpdateSuccess = data => {
-  store.bucketLists = data.bucketLists
-  // $('#message').text('You updated an item for your Bucket list!')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  // store.bucketLists = data.bucketLists
+  console.log(data)
+  $('#message5').text('You updated an item for your Bucket list!')
+  $('#message5').removeClass()
+  $('#message5').addClass('success')
   $('#bucket-list-update').trigger('reset')
 }
 
 const bucketListUpdateFailure = data => {
-  // $('#message').text('Error on bucket list item update')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message5').text('Error on bucket list item update')
+  $('#message5').removeClass()
+  $('#message5').addClass('failure')
   // console.error('signUpFailure ran. Error is :', error)
   $('#bucket-list-update').trigger('reset')
 }
 
 const bucketListIndexSuccess = data => {
-  store.bucketLists = data.bucketLists
-  // display tasks on show all click
-  // document.getElementById('output').hidden = false
-  // $('#message').text('Here are all your Bucket list items!')
-  // empties output
   $('#output').empty()
-  // function - for each bucket list item
-  data.bucketLists.forEach(bucketList => {
-    // add to output
-    $('#output').append(
-      // formatting how the tasks show to the user
-      `<div id=${bucketList.id}> <p> ${bucketList.id} </p> </div>`)
-    // calling the keys and their values and printing them out (user input)
-    for (const key in bucketList) {
-      if (key !== 'id') {
-        $(`#${bucketList.id}`).append(`<p>${key}: ${bucketList[key]}</p>`)
-      }
-    }
-  })
-  $('#message').removeClass()
-  $('#message').addClass('success')
+
+  const showbucketListHtml = bucketListTemplate({ bucketLists: data.bucketLists })
+  $('#output').append(showbucketListHtml)
+
+  $('#message5').text('Here is your Bucket List!')
+  $('#message5').removeClass()
+  $('#message5').addClass('success')
 }
 
 const bucketListIndexFailure = data => {
-  $('#message').text('Failure on todo_list index')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message5').text('Failure on Bucket List index')
+  $('#message5').removeClass()
+  $('#message5').addClass('failure')
 }
 
 module.exports = {
