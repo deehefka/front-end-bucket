@@ -110,48 +110,48 @@ const changePasswordFailure = error => {
 const bucketListCreateSuccess = data => {
   store.bucketLists = data.bucketLists
   //console.log(data)
-  $('#message5').text('You created an item for your Bucket list!')
+  $('#message6').text('You created an item for your Bucket list!')
   // document.getElementById('bucket-list-item').hidden = false
-  $('#message5').removeClass()
-  $('#message5').addClass('success')
+  $('#message6').removeClass()
+  $('#message6').addClass('success')
   $('#bucket-list-create').trigger('reset')
 }
 
 const bucketListCreateFailure = data => {
-  $('#message5').text('Error on Bucket List item creation')
-  $('#message5').removeClass()
-  $('#message5').addClass('failure')
+  $('#message6').text('Error on Bucket List item creation')
+  $('#message6').removeClass()
+  $('#message6').addClass('failure')
   // console.error('signUpFailure ran. Error is :', error)
   $('#bucket-list-create').trigger('reset')
 }
 
 const bucketListDeleteSuccess = data => {
-  $('#message5').text('You deleted a Bucket list item!')
-  $('#message5').removeClass()
-  $('#message5').addClass('success')
+  $('#message6').text('You deleted a Bucket list item!')
+  $('#message6').removeClass()
+  $('#message6').addClass('success')
   $('#bucket-list-delete').trigger('reset')
 }
 
 const bucketListDeleteFailure = data => {
-  $('#message5').text('Failure on Bucket List item delete')
-  $('#message5').removeClass()
-  $('#message5').addClass('failure')
+  $('#message6').text('Failure on Bucket List item delete')
+  $('#message6').removeClass()
+  $('#message6').addClass('failure')
   $('#bucket-list-delete').trigger('reset')
 }
 
 const bucketListUpdateSuccess = data => {
   // store.bucketLists = data.bucketLists
   //console.log(data)
-  $('#message5').text('You updated an item for your Bucket list!')
-  $('#message5').removeClass()
-  $('#message5').addClass('success')
+  $('#message6').text('You updated an item for your Bucket list!')
+  $('#message6').removeClass()
+  $('#message6').addClass('success')
   $('#bucket-list-update').trigger('reset')
 }
 
 const bucketListUpdateFailure = data => {
-  $('#message5').text('Error on bucket list item update')
-  $('#message5').removeClass()
-  $('#message5').addClass('failure')
+  $('#message6').text('Error on bucket list item update')
+  $('#message6').removeClass()
+  $('#message6').addClass('failure')
   // console.error('signUpFailure ran. Error is :', error)
   $('#bucket-list-update').trigger('reset')
 }
