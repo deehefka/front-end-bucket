@@ -4,6 +4,8 @@ const store = require('./store.js')
 const bucketListTemplate = require('./bucketlist.handlebars')
 
 $('#animation-content').hide()
+$('#showEditModal').hide()
+
 // methods signUpSuccess,signUpFailure
 const signUpSuccess = data => {
   $('#message').text('Signed up Successfully')
@@ -34,6 +36,7 @@ const signInSuccess = data => {
   $('#password-btn').show()
   $('#animation-content').show()
   $('#showModal').show()
+  $('#showEditModal').show()
   $('#message2').text('Signed In Successfully')
   $('#message2').removeClass()
   $('#message2').addClass('success')
@@ -62,6 +65,7 @@ const signOutSuccess = data => {
   $('#password-btn').hide()
   $('#animation-content').hide()
   $('#showModal').hide()
+  $('#showEditModal').hide()
   store.user = null
   $('#message3').text('Signed Out Successfully')
   $('#message3').removeClass()

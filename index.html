@@ -30,8 +30,10 @@
              Out</span></button>
            <button type="button" id="password-btn" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">Change
              Password</span></button>
-            <button type="button" id="showModal" class="btn btn-primary" data-toggle="modal" data-target="#showButtonModal">Show My Bucket
+             <button type="button" id="showModal" class="btn btn-primary" data-toggle="modal" data-target="#showButtonModal">Show My Bucket
              List</span></button>
+             <button type="button" id="showEditModal" class="btn btn-primary" data-toggle="modal" data-target="#showEditButtonModal">Edit
+               My Bucket List</span></button>
          </header>
 
 <!-- Sign up Button -->
@@ -173,6 +175,32 @@
                <input type="submit" class="btn btn-primary" value="Show My Bucket List" id="showButton">
                <!-- </fieldset> -->
              </form>
+
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="modal fade" id="showEditButtonModal">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="exampleModalLabel"></h5>
+         </div>
+
+         <div class="form">
+           <div class="container">
+             <!-- <form id="bucket-list-index"> -->
+               <!-- <div id="output"></div> -->
+               <!-- <fieldset> -->
+               <!-- <input type="submit" class="btn btn-primary" value="EDIT My Bucket" id="showEditButton"> -->
+               <!-- </fieldset> -->
+             <!-- </form> -->
 
              <h2 id="my-bucket-items" class="text-center"></h2>
              <form id="bucket-list-create">
