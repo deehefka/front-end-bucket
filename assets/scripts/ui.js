@@ -100,47 +100,48 @@ const changePasswordFailure = error => {
 const bucketListCreateSuccess = data => {
   store.bucketLists = data.bucketLists
   console.log(data)
-  // $('#message').text('You created an item for your Bucket list!')
+  $('#message5').text('You created an item for your Bucket list!')
   // document.getElementById('bucket-list-item').hidden = false
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message5').removeClass()
+  $('#message5').addClass('success')
   $('#bucket-list-create').trigger('reset')
 }
 
 const bucketListCreateFailure = data => {
-  // $('#message').text('Error on Bucket List item creation')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message5').text('Error on Bucket List item creation')
+  $('#message5').removeClass()
+  $('#message5').addClass('failure')
   // console.error('signUpFailure ran. Error is :', error)
   $('#bucket-list-create').trigger('reset')
 }
 
 const bucketListDeleteSuccess = data => {
-  // $('#message').text('You deleted a Bucket list item!')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message5').text('You deleted a Bucket list item!')
+  $('#message5').removeClass()
+  $('#message5').addClass('success')
   $('#bucket-list-delete').trigger('reset')
 }
 
 const bucketListDeleteFailure = data => {
-  // $('#message').text('Failure on Bucket List item delete')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message5').text('Failure on Bucket List item delete')
+  $('#message5').removeClass()
+  $('#message5').addClass('failure')
   $('#bucket-list-delete').trigger('reset')
 }
 
 const bucketListUpdateSuccess = data => {
-  store.bucketLists = data.bucketLists
-  // $('#message').text('You updated an item for your Bucket list!')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  // store.bucketLists = data.bucketLists
+  console.log(data)
+  $('#message5').text('You updated an item for your Bucket list!')
+  $('#message5').removeClass()
+  $('#message5').addClass('success')
   $('#bucket-list-update').trigger('reset')
 }
 
 const bucketListUpdateFailure = data => {
-  // $('#message').text('Error on bucket list item update')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message5').text('Error on bucket list item update')
+  $('#message5').removeClass()
+  $('#message5').addClass('failure')
   // console.error('signUpFailure ran. Error is :', error)
   $('#bucket-list-update').trigger('reset')
 }
@@ -165,14 +166,15 @@ const bucketListIndexSuccess = data => {
       }
     }
   })
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message5').text('Here is your Bucket List!')
+  $('#message5').removeClass()
+  $('#message5').addClass('success')
 }
 
 const bucketListIndexFailure = data => {
-  $('#message').text('Failure on todo_list index')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message5').text('Failure on Bucket List index')
+  $('#message5').removeClass()
+  $('#message5').addClass('failure')
 }
 
 module.exports = {
