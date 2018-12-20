@@ -15,7 +15,7 @@ require('./assets/scripts/app.js')
 // styles
 require('./assets/styles/index.scss')
 
-const mymap = L.map('mapid').setView([40.709, -73.960], 13)
+const mymap = L.map('mapid').setView([41.820, -71.4193], 13)
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic2hlZWJpZXNkZWViaWVzIiwiYSI6ImNqcHNzcXJucTAwYzQ0OWw3YjYwcXZ5YTAifQ.HvPxZ9R5zMQqqSw-8bnu9A', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
