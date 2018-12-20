@@ -148,7 +148,7 @@ $box-shadow2: ();
   cursor: pointer;
   color: transparent;
   position: fixed;
-  bottom: 680px;
+  bottom: 500px;
   right: 8px;
 }
 
@@ -235,22 +235,23 @@ body {
   to { top: 280px; }
 }
 
-section {
-  color: transparent;
-  position: fixed;
-  bottom: 0;
-  right: 600px;
-  // border-radius: 50%;
-}
+// old ish
+// section {
+//   color: transparent;
+//   position: fixed;
+//   bottom: 0;
+//   right: 600px;
+//   // border-radius: 50%;
+// }
 
 aside {
   float: left;
   border-radius: 50%;
 }
 
-.squirrelTwo {
-  border-radius: 50%;
-}
+// .squirrelTwo {
+//   border-radius: 50%;
+// }
 
 // img {
 //   border-radius: 50%;
@@ -262,7 +263,7 @@ aside {
 
 .a {
   position: absolute;
-  top: 480px;
+  top: 340px;
   left: 1075px;
 }
 
@@ -302,9 +303,10 @@ aside {
   font-weight: bold;
 }
 
-legend {
-  color: white;
-}
+// old ish
+// legend {
+//   color: white;
+// }
 
 .close:hover,
 .close:focus {
@@ -354,7 +356,31 @@ footer {
 
 .whereYouGo {
   color: yellow;
-  font-size: 16px;
+  font-size: 1em;
+}
+
+section {
+  color: transparent;
+  position: fixed;
+  bottom: 0;
+  left: 600px;
+}
+
+.snowFlake {
+  color: transparent;
+  border-radius: 50%;
+}
+
+legend {
+  color: transparent;
+  position: fixed;
+  top: 500px;
+  left: 650px;
+}
+
+.squirrelTwo {
+  color: transparent;
+  border-radius: 50%;
 }
 
 // #addTaskButton {
