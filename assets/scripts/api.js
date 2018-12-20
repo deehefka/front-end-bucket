@@ -19,14 +19,14 @@ const signIn = data => {
   })
 }
 
-const changePassword = data => {
+const changePassword = function (data) {
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
     headers: {
-      Authorizaton: 'Token token=' + store.user.token
+      Authorization: 'Token token=' + store.user.token
     },
-    data: data
+    data
   })
 }
 
