@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('./store.js')
+
 const bucketListTemplate = require('./bucketlist.handlebars')
 $('#animation-content').hide()
 // methods signUpSuccess,signUpFailure
