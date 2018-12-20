@@ -4,9 +4,9 @@ Besides finishing WDI, you surely have one or two things you'd love to do with y
 
 Live URL-
 
-Front end URL: https://deehefka.github.io/front-end-bucket/
+Back end URL: https://boiling-temple-34705.herokuapp.com/bucketLists
 
-Back end URL:
+Front end URL: https://deehefka.github.io/front-end-bucket/
 
 Link to Back-end Repo: https://github.com/deehefka/back-end-bucket
 
