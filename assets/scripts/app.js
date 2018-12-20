@@ -33,4 +33,5 @@ $(() => {
   $('#bucket-list-index').on('click', authEvents.onBucketListIndex)
   $('#bucket-list-delete').on('submit', authEvents.onBucketListDelete)
   $('#bucket-list-update').on('submit', authEvents.onBucketListUpdate)
+
 })

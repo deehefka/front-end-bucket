@@ -24,7 +24,7 @@ const signUpFailure = error => {
   $('#message').removeClass()
   $('#message').addClass('failure')
   $('#sign-up-form').trigger('reset')
-  console.error('signUpFailure ran. Error is :', error)
+  //console.error('signUpFailure ran. Error is :', error)
 }
 
 const signInSuccess = data => {
@@ -54,7 +54,7 @@ const signInFailure = error => {
   $('#message2').removeClass()
   $('#message2').addClass('failure')
   $('#sign-in-form').trigger('reset')
-  console.error('signInFailure ran. Error is :', error)
+  //console.error('signInFailure ran. Error is :', error)
 }
 
 const signOutSuccess = data => {
@@ -84,7 +84,7 @@ const signOutFailure = error => {
   $('#message3').text('Error on SignOut')
   $('#message3').removeClass()
   $('#message3').addClass('failure')
-  console.error('signOutFailure ran. Error is :', error)
+  // console.error('signOutFailure ran. Error is :', error)
 }
 
 const changePasswordSuccess = data => {
@@ -96,7 +96,7 @@ const changePasswordSuccess = data => {
   // $('#changePasswordModal').modal('hide')
   window.setTimeout(function () {
     $('#changePasswordModal').modal('hide')
-  }, 1000)
+  }, 500)
 }
 
 const changePasswordFailure = error => {
@@ -104,12 +104,12 @@ const changePasswordFailure = error => {
   $('#message4').removeClass()
   $('#message4').addClass('failure')
   $('#change-password-form').trigger('reset')
-  console.error('changePasswordFailure ran. Error is :', error)
+  //console.error('changePasswordFailure ran. Error is :', error)
 }
 
 const bucketListCreateSuccess = data => {
   store.bucketLists = data.bucketLists
-  console.log(data)
+  //console.log(data)
   $('#message5').text('You created an item for your Bucket list!')
   // document.getElementById('bucket-list-item').hidden = false
   $('#message5').removeClass()
@@ -141,7 +141,7 @@ const bucketListDeleteFailure = data => {
 
 const bucketListUpdateSuccess = data => {
   // store.bucketLists = data.bucketLists
-  console.log(data)
+  //console.log(data)
   $('#message5').text('You updated an item for your Bucket list!')
   $('#message5').removeClass()
   $('#message5').addClass('success')
@@ -171,6 +171,7 @@ const bucketListIndexFailure = data => {
   $('#message5').text('Failure on Bucket List index')
   $('#message5').removeClass()
   $('#message5').addClass('failure')
+  // console.error('changePasswordFailure ran. Error is :', error)
 }
 
 module.exports = {
@@ -181,13 +182,5 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure,
-  bucketListIndexFailure,
-  bucketListIndexSuccess,
-  bucketListUpdateFailure,
-  bucketListUpdateSuccess,
-  bucketListDeleteFailure,
-  bucketListDeleteSuccess,
-  bucketListCreateFailure,
-  bucketListCreateSuccess
+  changePasswordFailure
 }

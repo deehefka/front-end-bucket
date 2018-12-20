@@ -2,28 +2,25 @@ Team Project - Bucket List - Front End
 
 Besides finishing WDI, you surely have one or two things you'd love to do with your life. Let's get 'em on paper! You could integrate with a third-party location-based API to allow users to search for a location or venue to add to their bucket list items.
 
-Live URL:
+Live URL-
 
-Front end URL:
+Front end URL: https://deehefka.github.io/front-end-bucket/
 
-Back end URL: 
+Back end URL:
 
 Link to Back-end Repo: https://github.com/deehefka/back-end-bucket
 
 Link to Front-end Repo: https://github.com/deehefka/front-end-bucket
 
-WireFrame
-https://imgur.com/rRGnOmo (Everything all together)
-https://imgur.com/He93LIp (Buttons and Single Page App)
-https://imgur.com/tePV99k (sign up/sign in modal)
-https://imgur.com/zlR7OnA (change pass, sign out, edit, delete modal)
+WireFrame https://imgur.com/rRGnOmo (Everything all together) https://imgur.com/He93LIp (Buttons and Single Page App) https://imgur.com/tePV99k (sign up/sign in modal) https://imgur.com/zlR7OnA (change pass, sign out, edit, delete modal)
 
 User Stories -
-- As a user, I should be able to sign up and sign in to access my bucket list
-- As a user, I should be able to create, index, update and delete my bucket list items
-- As a user, I should be able to change my password and sign out (only after successful sign in)
-- As a user, I should be able to add a title, subtitle, description and location/venue to my bucket list items
-- As a user, I should be able to search for a geo-location for my bucket list items
+
+As a user, I should be able to sign up and sign in to access my bucket list
+As a user, I should be able to create, index, update and delete my bucket list items
+As a user, I should be able to change my password and sign out (only after successful sign in)
+As a user, I should be able to add a title, subtitle, description and location/venue to my bucket list items
+As a user, I should be able to search for a geo-location for my bucket list items
 
 List of technologies used
 -HTML/css
@@ -34,6 +31,17 @@ List of technologies used
 List unsolved problems which would be fixed in future iterations.
 - add markers to map
 - link map markers to bucket list items
+
+List of technologies used 
+-HTML/css 
+-Javascript
+-Leaflet (map)
+-AJAX
+
+List unsolved problems which would be fixed in future iterations.
+
+add markers to map
+link map markers to bucket list items
 
 Document your planning, process and problem-solving strategy
 

@@ -17,9 +17,9 @@
   crossorigin=""></script>
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-       </head>
-
-       <body>
+   </head>
+    <body>
+       
          <!-- Header Buttons -->
          <header>
            <button type="button" id="sign-up-btn" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Sign
@@ -46,6 +46,7 @@
                  </div>
                  <div class="modal-body">
                    <form id='sign-up-form'>
+
                      <fieldset>
                        <legend>Sign Up</legend>
                        <input class="form-control" type='text' name='credentials[email]' placeholder='Email' />
@@ -53,11 +54,13 @@
                        <input class="form-control" type='password' name='credentials[password_confirmation]' placeholder='Confirm Password' />
                        <button type="submit" class="btn btn-primary" name="submit" value="Sign Up">Sign Up</button>
                    </fieldset>
+                     
                    </form>
                    <p id='message'></p>
                  </div>
                  <div class="modal-footer">
                    <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                   <button type="button" class="btn btn-primary" id="sign-up">SAVE</button>
                  </div>
                </div>
              </div>
@@ -77,14 +80,11 @@
                    </div>
                    <div class='borderTwo-content' id='exampleTwo'>
                      <form id='sign-in-form' class='borderOne'>
-                       <fieldset>
-                         <legend>Sign In</legend>
                        <div>
-                         <input class="form-control" type='text' name='credentials[email]' placeholder='Email' />
-                         <input class="form-control" type='password' name='credentials[password]' placeholder='Password' />
-                         <button type="submit" class="btn btn-primary" name="submit" value="Sign In">Sign In</button>
+                         <input type='text' name='credentials[email]' placeholder='Email' />
+                         <input type='password' name='credentials[password]' placeholder='Password' />
+                         <input type='submit' id='sign-in' value='Sign In !' />
                        </div>
-                     </fieldset>
                      </form>
                      <p id='message2'></p>
                    </div>
@@ -383,5 +383,4 @@
     </footer>
 
   </body>
-
 </html>
