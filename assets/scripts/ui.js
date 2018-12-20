@@ -3,6 +3,8 @@
 const store = require('./store.js')
 const bucketListTemplate = require('./bucketlist.handlebars')
 
+const bucketListTemplate = require('./bucketlist.handlebars')
+$('#animation-content').hide()
 // methods signUpSuccess,signUpFailure
 const signUpSuccess = data => {
   $('#message').text('Signed up Successfully')
@@ -31,6 +33,7 @@ const signInSuccess = data => {
   $('#sign-in-btn').hide()
   $('#sign-out-btn').show()
   $('#password-btn').show()
+  $('#animation-content').show()
   $('#showModal').show()
   $('#message2').text('Signed In Successfully')
   $('#message2').removeClass()
@@ -40,7 +43,7 @@ const signInSuccess = data => {
   // $('#signInModal').modal('hide')
   window.setTimeout(function () {
     $('#signInModal').modal('hide')
-  }, 1000)
+  }, 500)
   // $('#gameBoard').css('visibility', 'visible')
 }
 
@@ -58,6 +61,8 @@ const signOutSuccess = data => {
   $('#sign-in-btn').show()
   $('#sign-out-btn').hide()
   $('#password-btn').hide()
+  $('#animation-content').hide()
+  $('#showModal').hide()
   store.user = null
   $('#message3').text('Signed Out Successfully')
   $('#message3').removeClass()
@@ -66,7 +71,7 @@ const signOutSuccess = data => {
   // $('#signOutModal').modal('hide')
   window.setTimeout(function () {
     $('#signOutModal').modal('hide')
-  }, 1000)
+  }, 500)
   // $('#gameBoard').css('visibility', 'hidden')
 }
 
