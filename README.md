@@ -46,3 +46,5 @@ link map markers to bucket list items
 Document your planning, process and problem-solving strategy
 
 Our planning process was to create detailed wireframes and user stories. We originally thought we had to include images and connect tot AWS but we were not. After that realization, we focused on getting our Auth connections and our CRUD actions to work and speak to each other. Our strecth goal would be to add pictures for each bucket item. We also implemented a map within our website and another stretch goal is to add markers on the map and connect them with the database/bucket items as well. Once we had the routes/connections established, we focused on styling (which we had a LOT fo fun with.) Our problem solving strategy was to research, look inside the issue queue, ask within the issue queue and brainstorm as a team/peer program.
+
+Updating README
