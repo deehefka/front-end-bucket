@@ -182,5 +182,13 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  bucketListCreateSuccess,
+  bucketListCreateFailure,
+  bucketListUpdateSuccess,
+  bucketListUpdateFailure,
+  bucketListIndexSuccess,
+  bucketListIndexFailure,
+  bucketListDeleteSuccess,
+  bucketListDeleteFailure
 }
