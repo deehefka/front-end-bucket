@@ -6,6 +6,10 @@ const bucketListTemplate = require('./bucketlist.handlebars')
 $('#animation-content').hide()
 $('#showEditModal').hide()
 
+const clearList = () => {
+  $('#output').html('')
+}
+
 // methods signUpSuccess,signUpFailure
 const signUpSuccess = data => {
   $('#message').text('Signed up Successfully')
@@ -115,6 +119,7 @@ const bucketListCreateSuccess = data => {
   $('#message6').removeClass()
   $('#message6').addClass('success')
   $('#bucket-list-create').trigger('reset')
+  clearList()
 }
 
 const bucketListCreateFailure = data => {
@@ -130,6 +135,7 @@ const bucketListDeleteSuccess = data => {
   $('#message6').removeClass()
   $('#message6').addClass('success')
   $('#bucket-list-delete').trigger('reset')
+  clearList()
 }
 
 const bucketListDeleteFailure = data => {
@@ -141,11 +147,12 @@ const bucketListDeleteFailure = data => {
 
 const bucketListUpdateSuccess = data => {
   // store.bucketLists = data.bucketLists
-  //console.log(data)
+  // console.log(data)
   $('#message6').text('You updated an item for your Bucket list!')
   $('#message6').removeClass()
   $('#message6').addClass('success')
   $('#bucket-list-update').trigger('reset')
+  clearList()
 }
 
 const bucketListUpdateFailure = data => {
@@ -175,6 +182,7 @@ const bucketListIndexFailure = data => {
 }
 
 module.exports = {
+  clearList,
   signUpSuccess,
   signUpFailure,
   signInSuccess,
