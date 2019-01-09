@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>#SSS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+  integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+  crossorigin=""/>
+
+  <!-- Do not add `script` tags -->
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+  integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+  crossorigin=""></script>
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+   </head>
+    <body>
+       
+         <!-- Header Buttons -->
+         <header>
+           <button type="button" id="sign-up-btn" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Sign
+             Up</span></button>
+           <button type="button" id="sign-in-btn" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">Sign
+             In</span></button>
+           <button type="button" id="sign-out-btn" class="btn btn-primary" data-toggle="modal" data-target="#signOutModal">Sign
+             Out</span></button>
+           <button type="button" id="password-btn" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">Change
+             Password</span></button>
+             <button type="button" id="showModal" class="btn btn-primary" data-toggle="modal" data-target="#showButtonModal">Show My Bucket
+             List</span></button>
+             <button type="button" id="showEditModal" class="btn btn-primary" data-toggle="modal" data-target="#showEditButtonModal">Edit
+               My Bucket List</span></button>
+         </header>
+
+<!-- Sign up Button -->
+         <div>
+           <div class="modal fade" id="signUpModal">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalLabel"></h5>
+                 </div>
+                 <div class="modal-body">
+                   <form id='sign-up-form'>
+
+                     <fieldset>
+                       <legend>Sign Up</legend>
+                       <input class="form-control" type='text' name='credentials[email]' placeholder='Email' />
+                       <input class="form-control" type='password' name='credentials[password]' placeholder='Password' />
+                       <input class="form-control" type='password' name='credentials[password_confirmation]' placeholder='Confirm Password' />
+                       <button type="submit" class="btn btn-primary" name="submit" value="Sign Up">Sign Up</button>
+                   </fieldset>
+                     
+                   </form>
+                   <p id='message'></p>
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                   <button type="button" class="btn btn-primary" id="sign-up">SAVE</button>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+<!-- Sign in Button -->
+         <div>
+           <div class="modal fade" id="signInModal">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalLabel"></h5>
+                 </div>
+                 <div class="modal-body">
+                   <div>
+                     <a class='borderTwo' href='#exampleTwo'></a>
+                   </div>
+                   <div class='borderTwo-content' id='exampleTwo'>
+                     <form id='sign-in-form' class='borderOne'>
+                       <div>
+                         <input type='text' name='credentials[email]' placeholder='Email' />
+                         <input type='password' name='credentials[password]' placeholder='Password' />
+                         <input type='submit' id='sign-in' value='Sign In !' />
+                       </div>
+                     </form>
+                     <p id='message2'></p>
+                   </div>
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+
+<!-- Change Password -->
+         <div>
+           <div class="modal fade" id="changePasswordModal">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalLabel"></h5>
+                 </div>
+                 <div class="modal-body">
+                   <div>
+                     <a class='borderThree' href='#exampleThree'></a>
+                   </div>
+                     <form id='change-password-form'>
+                       <fieldset>
+                         <legend>Change Password</legend>
+                         <div class='borderThree-content' id='exampleThree'>
+                           <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password" />
+                           <input class="form-control" type="password" name="passwords[new]" placeholder="New Password" />
+                           <button type="submit" class="btn btn-primary" name="submit" value="Change Password">Change Password</button>
+                         </div>
+                       </fieldset>
+                     </form>
+                     <p id='message4'></p>
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+<!-- Sign out Button -->
+         <div>
+           <div class="modal fade" id="signOutModal">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalLabel"></h5>
+                 </div>
+                 <div class="modal-body">
+                   <form id='sign-out-form' class='border'>
+                     <fieldset>
+                     <div>
+                       <input type="submit" value="Sign out" />
+                     </div>
+                   </fieldset>
+                   </form>
+                   <p id='message3'></p>
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+
+<br>
+
+<!-- Bucket Container Information -->
+ <div>
+   <div class="modal fade" id="showButtonModal">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <p id='message5'></p>
+           <h5 class="modal-title" id="exampleModalLabel"></h5>
+         </div>
+
+
+         <div class="form">
+           <div class="container">
+             <form id="bucket-list-index">
+               <div id="output"></div>
+               <!-- <fieldset> -->
+               <input type="submit" class="btn btn-primary" value="Show My Bucket List" id="showButton">
+               <!-- </fieldset> -->
+             </form>
+
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="modal fade" id="showEditButtonModal">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <p id='message6'></p>
+           <h5 class="modal-title" id="exampleModalLabel"></h5>
+         </div>
+
+         <div class="form">
+           <div class="container">
+             <!-- <form id="bucket-list-index"> -->
+               <!-- <div id="output"></div> -->
+               <!-- <fieldset> -->
+               <!-- <input type="submit" class="btn btn-primary" value="EDIT My Bucket" id="showEditButton"> -->
+               <!-- </fieldset> -->
+             <!-- </form> -->
+
+             <h2 id="my-bucket-items" class="text-center"></h2>
+             <form id="bucket-list-create">
+               <!-- <fieldset> -->
+               <input type="text" name="bucketList[title]" placeholder="Where do you want to go?" class="col - 8 mx-auto"
+                 id="title">
+               <br>
+               <input type="text" name="bucketList[subtitle]" placeholder="Extra details?" class="col - 8 mx-auto" id="subtitle">
+               <br>
+               <input type="text" name="bucketList[description]" placeholder="All the things you want to do there..."
+                 class="col - 8 mx-auto" id="description">
+               <br>
+               <input type="submit" class="btn btn-primary" value="Create a List Item" id="addTaskButton">
+               <!-- </fieldset> -->
+             </form>
+
+             <form id="bucket-list-update">
+               <!-- <fieldset> -->
+               <input type="text" name="bucketList[title]" placeholder="Change the Name of your List Item" class="col - 8 mx-auto"
+                 id="titleUpdate">
+               <br>
+               <input type="text" name="bucketList[subtitle]" placeholder="Change the Subtitle of your List Item"
+                 class="col - 8 mx-auto" id="subtitleUpdate">
+               <br>
+               <input type="text" name="bucketList[description]" placeholder="Change the details..." class="col - 8 mx-auto"
+                 id="descriptionUpdate">
+               <br>
+               <input type="text" name="bucketList[id]" placeholder="ID number" class="mx-auto" id="taskId">
+               <br>
+               <input type="submit" class="btn btn-primary" value="Update one Bucket List Item" id="updateTaskButton">
+               <!-- </fieldset> -->
+             </form>
+
+             <form id="bucket-list-delete">
+               <!-- <fieldset> -->
+               <input type="text" name="bucketList[id]" placeholder="Bucket List ID" id="delete-task">
+               <br>
+               <input type="submit" class="btn btn-primary" value="Delete Bucket List Item" id="deleteButton">
+               <!-- </fieldset> -->
+             </form>
+           </div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+
+        <!-- <aside>
+          <div class="squirrel">
+          <img src="public/images/S.png" alt="squirrel" style="border-radius: 50%">
+          </div>
+        </aside> -->
+
+        <!-- <section>
+          <div class="squirrelTwo">
+            <img src="public/images/xmas.jpg" alt="squirrel" style="border-radius: 50%">
+        </section> -->
+
+        <!-- <div class="a">
+          <div id="mapid"></div>
+        </div> -->
+
+        <br>
+        <br>
+        <br>
+
+        <!-- animation-content -->
+        <!-- animation-content -->
+<div>
+  <div id="animation-content">
+    <div class="animation-content">
+      <aside>
+        <div class="squirrel">
+          <img src="public/images/S.png" alt="squirrel" style="border-radius: 50%">
+        </div>
+      </aside>
+
+      <!-- PYRO Fireworks -->
+      <div class="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
+      </div>
+
+      <!-- GEO Map Locator -->
+      <div class="a">
+        <form>
+        <div class="whereYouGo"
+          <p>
+            <span style="margin-left:100px;">Mark where you want to go!</span>
+            <span style="margin-left:100px;"><label for="latitude">Latitude:</label><input id="latitude" type="text" /></span>
+            <span style="margin-left:100px;"><label for="longitude">Longitude:</label><input id="longitude" type="text" /></span>
+          </p>
+        </div>
+        </form>
+        <div id="mapid"></div>
+      </div>
+
+      <!-- Picture SnowFlake -->
+      <section>
+        <div class="snowFlake">
+          <img src="public/images/snowflake_squirrel.png" alt="snowFlake" style="border-radius: 50%">
+      </section>
+
+      <!-- Picture Xmas Squirrel -->
+      <!-- <legend>
+        <div class="squirrelTwo">
+          <img src="public/images/xmas4.png" alt="squirrel" style="border-radius: 50%">
+      </legend> -->
+
+      <br>
+      <br>
+      <br>
+
+      <!-- CipmunksVideo -->
+      <section>
+        <div class="video">
+          <iframe width="300" height="200" src="https://www.youtube.com/embed/xBAshnF0HwY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+          </video>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+<!-- <div>
+  <div id="animation-content">
+    <div class="animation-content">
+      <aside>
+        <div class="squirrel">
+          <img src="public/images/S.png" alt="squirrel" style="border-radius: 50%">
+        </div>
+      </aside>
+
+      <section>
+        <div class="squirrelTwo">
+          <img src="public/images/xmas.jpg" alt="squirrel" style="border-radius: 37%">
+      </section> -->
+
+      <!-- PYRO Fireworks -->
+      <!-- <div class="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
+      </div>
+
+      <div class="a">
+        <form>
+        <div class="whereYouGo"
+          <p>
+            <span style="margin-left:100px;">Mark where you want to go!</span>
+            <span style="margin-left:100px;"><label for="latitude">Latitude:</label><input id="latitude" type="text" /></span>
+            <span style="margin-left:100px;"><label for="longitude">Longitude:</label><input id="longitude" type="text" /></span>
+          </p>
+        </div>
+        </form>
+        <div id="mapid"></div>
+      </div>
+
+      <br>
+      <br>
+      <br> -->
+
+      <!-- Video -->
+      <!-- <section>
+        <div class="video">
+          <iframe width="300" height="200" src="https://www.youtube.com/embed/xBAshnF0HwY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+          </video>
+        </div>
+      </section>
+    </div>
+  </div>
+</div> -->
+
+    <footer>
+      <p>&copy; #Sleepy Squirrel Squad ! (all rights reserved)</p>
+    </footer>
+
+  </body>
+</html>
